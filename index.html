@@ -1248,7 +1248,8 @@ document.querySelectorAll('.tel-link').forEach(a => a.href = 'tel:+' + TELEFONO)
 
 // Usuario de Instagram de Brio, sin @
 const INSTAGRAM = 'brio.comunicacion';
-document.querySelectorAll('a[href^="https://instagram.com/"]').forEach(a => a.href = 'https://instagram.com/' + INSTAGRAM);
+// (las tarjetas de clientes llevan a su propio Instagram, no se tocan)
+document.querySelectorAll('a[href^="https://instagram.com/"]:not(.tile)').forEach(a => a.href = 'https://instagram.com/' + INSTAGRAM);
 document.querySelectorAll('.ig-handle').forEach(el => el.textContent = '@' + INSTAGRAM);
 
 const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
