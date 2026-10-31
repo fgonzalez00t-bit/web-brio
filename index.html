@@ -617,6 +617,53 @@ a{color:#4B2B08}a:hover{color:#BC2313}
   .secbar,.secbar span{transition:opacity 200ms ease}
   .secbar{transform:translate(-50%,0)}
 }
+
+/* Campañas: la idea en varios formatos */
+.mfs{position:relative;width:100%;max-width:380px;height:200px}
+.mf{position:absolute;border-radius:12px;display:flex;flex-direction:column;justify-content:space-between;padding:10px 12px;box-sizing:border-box;box-shadow:0 10px 24px rgba(0,0,0,.25);opacity:0;animation:mfin 7s var(--ease-out) infinite;animation-delay:calc(var(--k) * 260ms)}
+.mf small{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;opacity:.65}
+.mf-bill{left:0;top:6px;width:calc(100% - 118px);height:84px;background:#FFF0B5;color:#4B2B08}
+.mf-bill b{font-size:15px;line-height:1.05;letter-spacing:-.01em}
+.mf-story{right:0;top:0;width:30%;min-width:104px;height:182px;background:#9AC3E8;color:#4B2B08;padding-top:16px}
+.mf-story b{font-size:20px;line-height:.95;letter-spacing:-.02em}
+.mf-bar{position:absolute;top:7px;left:8px;right:8px;height:2px;border-radius:2px;background:rgba(75,43,8,.25)}
+.mf-ic{width:30px;height:30px}.mf-ic svg{width:100%;height:100%}
+.mf-post{left:0;bottom:4px;width:84px;height:84px;background:#FAF0DA;color:#9AC3E8;align-items:center;justify-content:center;gap:4px}
+.mf-post small{color:#4B2B08}
+.mf-post .mf-ic{width:44px;height:44px}
+.mf-badge{left:100px;bottom:16px;width:62px;height:62px;border-radius:999px;background:#9AC3E8;color:#4B2B08;align-items:center;justify-content:center;padding:0;font-size:11px;font-weight:800;line-height:1;text-align:center;letter-spacing:.02em}
+@keyframes mfin{0%{opacity:0;transform:translateY(12px) scale(.94)}6%{opacity:1;transform:none}80%{opacity:1;transform:none}88%,100%{opacity:0;transform:translateY(-6px) scale(.98)}}
+.mf-badge{animation-name:mfbadge}
+@keyframes mfbadge{0%{opacity:0;transform:scale(.8) rotate(-20deg)}6%{opacity:1;transform:rotate(-12deg)}80%{opacity:1;transform:rotate(-12deg)}88%,100%{opacity:0;transform:scale(.95) rotate(-12deg)}}
+/* Acciones: ticket + papelitos */
+.b-acc .bt-vis{overflow:hidden;margin:0 -28px -28px;padding:0 28px 28px}
+.conf{position:absolute;inset:0;pointer-events:none}
+.conf i{position:absolute;left:var(--x);top:-30px;width:18px;height:18px;animation:fall 4.2s linear infinite;animation-delay:var(--d)}
+.conf i svg{width:100%;height:100%}
+@keyframes fall{from{transform:translateY(0) rotate(0)}to{transform:translateY(260px) rotate(var(--r))}}
+.tk{position:relative;display:flex;width:min(290px,92%);filter:drop-shadow(0 12px 20px rgba(46,26,5,.2));animation:tkt 3.6s var(--ease-in-out) infinite alternate}
+@keyframes tkt{from{transform:rotate(-5deg)}to{transform:rotate(-1deg) translateY(-6px)}}
+.tk-main{flex:1;background:#4B2B08;color:#FFF0B5;border-radius:14px 4px 4px 14px;padding:16px 18px;display:flex;flex-direction:column;gap:6px;-webkit-mask:radial-gradient(circle 9px at 100% 0,transparent 98%,#000) top/100% 51% no-repeat,radial-gradient(circle 9px at 100% 100%,transparent 98%,#000) bottom/100% 51% no-repeat;mask:radial-gradient(circle 9px at 100% 0,transparent 98%,#000) top/100% 51% no-repeat,radial-gradient(circle 9px at 100% 100%,transparent 98%,#000) bottom/100% 51% no-repeat}
+.tk-main small{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#9AC3E8}
+.tk-main .tk-date{color:#E6D6A8;letter-spacing:.04em;text-transform:none;font-weight:600}
+.tk-rot{display:block;height:30px;overflow:hidden}
+.tk-stack{display:flex;flex-direction:column;animation:tkrot 8s var(--ease-in-out) infinite}
+.tk-stack b{height:30px;line-height:30px;font-size:26px;font-weight:800;letter-spacing:-.02em}
+@keyframes tkrot{0%,20%{transform:translateY(0)}25%,45%{transform:translateY(-20%)}50%,70%{transform:translateY(-40%)}75%,95%{transform:translateY(-60%)}100%{transform:translateY(-80%)}}
+.tk-stub{width:76px;background:#9AC3E8;color:#4B2B08;border-radius:4px 14px 14px 4px;border-left:2px dashed #4B2B08;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;-webkit-mask:radial-gradient(circle 9px at 0 0,transparent 98%,#000) top/100% 51% no-repeat,radial-gradient(circle 9px at 0 100%,transparent 98%,#000) bottom/100% 51% no-repeat;mask:radial-gradient(circle 9px at 0 0,transparent 98%,#000) top/100% 51% no-repeat,radial-gradient(circle 9px at 0 100%,transparent 98%,#000) bottom/100% 51% no-repeat}
+.tk-stub small{font-size:11px;font-weight:700}
+.tk-stub b{font-size:18px;font-weight:800;font-variant-numeric:tabular-nums;writing-mode:vertical-rl;transform:rotate(180deg)}
+@media (max-width:700px){
+  .mf-story{min-width:0;width:84px}
+  .mf-bill{width:calc(100% - 94px);height:96px}
+  .mf-bill b{font-size:13px}
+  .mf-post{width:72px;height:72px}
+  .mf-badge{left:80px;bottom:8px;width:54px;height:54px;font-size:10px}
+}
+@media (prefers-reduced-motion:reduce){
+  .mf{animation:none;opacity:1}.mf-badge{transform:rotate(-12deg)}
+  .conf{display:none}.tk,.tk-stack{animation:none}
+}
 </style>
 </head>
 <body>
@@ -908,22 +955,24 @@ a{color:#4B2B08}a:hover{color:#BC2313}
         </article>
         <article class="bt b-camp">
           <h4>Campañas creativas</h4>
-          <p>Una idea fuerte, contada en todos lados.</p>
-          <div class="bt-vis" aria-hidden="true"><div class="cyc">
-            <span style="background: #FFF0B5; color: #4B2B08">Una idea</span>
-            <span style="background: #9AC3E8; color: #4B2B08">Una campaña</span>
-            <span style="background: #FFF0B5; color: #4B2B08">Una marca que se recuerda</span>
+          <p>Una idea fuerte, contada en todos lados: en la calle, en redes y en tu local.</p>
+          <div class="bt-vis" aria-hidden="true"><div class="mfs">
+            <span class="mf mf-bill" style="--k:0"><b>LAS COSAS SE HACEN CON GANAS.</b><small>Vía pública</small></span>
+            <span class="mf mf-story" style="--k:1"><i class="mf-bar"></i><span class="mf-ic"><svg viewBox="0 0 133.4 136.7" aria-hidden="true"><use href="#ast"></use></svg></span><b>con<br>ganas</b><small>Historia</small></span>
+            <span class="mf mf-post" style="--k:2"><span class="mf-ic"><svg viewBox="0 0 115 117.4" aria-hidden="true"><use href="#flor"></use></svg></span><small>Post</small></span>
+            <span class="mf mf-badge" style="--k:3">CON<br>GANAS</span>
           </div></div>
         </article>
         <article class="bt b-acc">
           <h4>Acciones de marketing</h4>
           <p>Sorteos, eventos, lanzamientos y colaboraciones que mueven a tu público.</p>
-          <div class="bt-vis" aria-hidden="true"><div class="deck">
-            <span style="--k:0;background:#4B2B08;color:#FFF0B5"><small>Acción</small>Sorteo</span>
-            <span style="--k:1;background:#9AC3E8;color:#4B2B08"><small>Acción</small>Evento</span>
-            <span style="--k:2;background:#FFFFFF;color:#4B2B08"><small>Acción</small>Lanzamiento</span>
-            <span style="--k:3;background:#422F2C;color:#FFF0B5"><small>Acción</small>Colaboración</span>
-          </div></div>
+          <div class="bt-vis" aria-hidden="true">
+            <span class="conf"><i style="--x:8%;--d:0s;--r:40deg;color:#9AC3E8"><svg viewBox="0 0 133.4 136.7" aria-hidden="true"><use href="#ast"></use></svg></i><i style="--x:22%;--d:1.6s;--r:-30deg;color:#4B2B08"><svg viewBox="0 0 115 117.4" aria-hidden="true"><use href="#flor"></use></svg></i><i style="--x:38%;--d:0.8s;--r:60deg;color:#BC2313"><svg viewBox="0 0 127.5 118.9" aria-hidden="true"><use href="#estrella"></use></svg></i><i style="--x:55%;--d:2.4s;--r:-50deg;color:#9AC3E8"><svg viewBox="0 0 115 117.4" aria-hidden="true"><use href="#flor"></use></svg></i><i style="--x:70%;--d:0.4s;--r:20deg;color:#4B2B08"><svg viewBox="0 0 133.4 136.7" aria-hidden="true"><use href="#ast"></use></svg></i><i style="--x:86%;--d:2s;--r:-70deg;color:#9AC3E8"><svg viewBox="0 0 127.5 118.9" aria-hidden="true"><use href="#estrella"></use></svg></i><i style="--x:46%;--d:3s;--r:30deg;color:#4B2B08"><svg viewBox="0 0 127.5 118.9" aria-hidden="true"><use href="#estrella"></use></svg></i><i style="--x:78%;--d:3.4s;--r:-20deg;color:#9AC3E8"><svg viewBox="0 0 133.4 136.7" aria-hidden="true"><use href="#ast"></use></svg></i></span>
+            <div class="tk">
+              <div class="tk-main"><small>Acción</small><span class="tk-rot"><span class="tk-stack"><b>Sorteo</b><b>Evento</b><b>Lanzamiento</b><b>Colaboración</b><b>Sorteo</b></span></span><small class="tk-date">Este sábado</small></div>
+              <div class="tk-stub"><small>Nº</small><b>0247</b></div>
+            </div>
+          </div>
         </article>
       </div>
       <p class="swipe-hint" aria-hidden="true"><span></span><span></span><span></span>Deslizá para ver más</p>
@@ -1775,7 +1824,7 @@ document.getElementById('svc-skip').addEventListener('click', () => {
 /* Pausar animaciones decorativas de Marca fuera de pantalla */
 (() => {
   const g = document.getElementById('svc-marca');
-  new IntersectionObserver(([e]) => g.querySelectorAll('.brand-aa, .brand-sw i, .brand-mark svg, .hang, .flyer, .cyc span, .deck span')
+  new IntersectionObserver(([e]) => g.querySelectorAll('.brand-aa, .brand-sw i, .brand-mark svg, .hang, .flyer, .mf, .conf i, .tk, .tk-stack')
     .forEach(el => el.style.animationPlayState = e.isIntersecting ? 'running' : 'paused')).observe(g);
 })();
 
