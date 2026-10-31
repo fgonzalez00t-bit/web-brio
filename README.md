@@ -10,8 +10,12 @@ Abrí `index.html` en el navegador.
 
 ## Pendientes antes de publicar
 
-- Número de WhatsApp: en `index.html`, buscá `const WHATSAPP = '[NUMERO]'` y poné el número con código de país, solo dígitos (ej: `59899123456`). Se aplica a todos los botones.
-- Todo lo que está entre `[CORCHETES]`: precios, clientes, reels, testimonio, Instagram, mail y dos respuestas de preguntas frecuentes.
+- En `index.html` hay tres datos que se cargan una sola vez y se aplican a toda la página:
+  - `const WHATSAPP = '[NUMERO]'`: número con código de país, solo dígitos (ej: `59899123456`).
+  - `const TELEFONO = '[TELEFONO]'`: para el botón Llamar, mismo formato.
+  - `const INSTAGRAM = '[USUARIO_BRIO]'`: usuario de Instagram, sin @.
+- Videos de los trabajos: en `index.html`, en la lista `STORIES`, completá `video` con la ruta de cada reel (ej: `assets/reels/cliente1.mp4`).
+- Todo lo que está entre `[CORCHETES]`: clientes, reels, testimonio, mail y dos respuestas de preguntas frecuentes.
 
 ## Publicar
 
