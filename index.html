@@ -298,7 +298,7 @@ a{color:#4B2B08}a:hover{color:#BC2313}
 
 /* ===== Qué hacemos: scroll con teléfono fijo ===== */
 .svc-head{padding:clamp(56px,8vw,128px) clamp(20px,5vw,72px) 0}
-.svc-scroll{position:relative;height:calc(5 * 85vh + 100vh)}
+.svc-scroll{position:relative;height:calc(5 * 70vh + 100vh)}
 .svc-sticky{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;gap:clamp(24px,4vw,64px);padding:0 clamp(20px,5vw,72px);box-sizing:border-box;background:var(--bg,#FFF0B5);color:var(--fg,#4B2B08);transition:background-color 450ms ease,color 450ms ease}
 .svc-names{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:2px}
 .svc-name{display:flex;align-items:center;gap:14px;width:100%;background:none;border:0;padding:4px 0;cursor:pointer;text-align:left;font-family:'Outfit',system-ui,sans-serif;font-size:clamp(34px,4.2vw,68px);font-weight:700;letter-spacing:-.03em;line-height:1.02;color:inherit;opacity:.22;transform:translateX(0);transition:opacity 300ms var(--ease-out),transform 300ms var(--ease-out)}
@@ -380,7 +380,7 @@ a{color:#4B2B08}a:hover{color:#BC2313}
 .svc-end{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;margin:8px 0 0;padding:28px clamp(20px,5vw,72px) clamp(56px,6vw,96px)}
 
 @media (max-width:900px){
-  .svc-scroll{height:calc(5 * 75vh + 100vh)}
+  .svc-scroll{height:calc(5 * 60vh + 100vh)}
   .svc-sticky{grid-template-columns:1fr;grid-template-rows:auto 1fr auto;justify-items:center;align-items:center;gap:12px;padding:72px 20px 96px;text-align:center}
   .svc-names{display:grid}
   .svc-names li{grid-area:1/1}
@@ -396,6 +396,56 @@ a{color:#4B2B08}a:hover{color:#BC2313}
   .svc-name,.svc-name svg{transition:opacity 200ms ease}
   .svc-side .swap{transition:opacity 200ms ease}.svc-side.swapping .swap{transform:none;filter:none}
   .svc-hint i::after{animation:none}
+}
+
+/* ===== Movimiento propio ===== */
+/* Rayas que fluyen (transform, lineal, infinito) */
+.flowbg{position:absolute;left:0;right:0;top:-214px;bottom:0;background-repeat:repeat;background-size:640px 213.33px;animation:flowdown 9s linear infinite;will-change:transform}
+.flowbg.slow{animation-duration:14s}
+@keyframes flowdown{to{transform:translateY(213.33px)}}
+/* Reel del hero que se reproduce solo */
+.hr-bars{position:absolute;top:14px;left:14px;right:14px;z-index:3;display:flex;gap:4px}
+.hr-bars i{flex:1;height:3px;border-radius:2px;background:rgba(255,255,255,.45);box-shadow:0 0 0 .5px rgba(75,43,8,.25);overflow:hidden}
+.hr-bars b{display:block;height:100%;background:#FFFFFF;transform-origin:left;transform:scaleX(0)}
+.hr-bars i:nth-child(1) b{animation:hb1 10.5s linear infinite}
+.hr-bars i:nth-child(2) b{animation:hb2 10.5s linear infinite}
+.hr-bars i:nth-child(3) b{animation:hb3 10.5s linear infinite}
+@keyframes hb1{0%{transform:scaleX(0)}33.3%{transform:scaleX(1)}99.9%{transform:scaleX(1)}100%{transform:scaleX(0)}}
+@keyframes hb2{0%,33.3%{transform:scaleX(0)}66.6%{transform:scaleX(1)}99.9%{transform:scaleX(1)}100%{transform:scaleX(0)}}
+@keyframes hb3{0%,66.6%{transform:scaleX(0)}99.9%{transform:scaleX(1)}100%{transform:scaleX(0)}}
+.hr-sc{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:8px;padding:28px 22px 96px;opacity:0;animation:hrs 10.5s linear infinite}
+.hr-sc:nth-of-type(2){animation-delay:0s}
+.hr-sc:nth-of-type(3){animation-delay:3.5s}
+.hr-sc:nth-of-type(4){animation-delay:7s}
+@keyframes hrs{0%{opacity:0}2%{opacity:1}31%{opacity:1}33.3%{opacity:0}100%{opacity:0}}
+.hr-w{font-size:clamp(28px,3.1vw,40px);font-weight:800;letter-spacing:-.03em;line-height:1;padding:4px 10px;border-radius:8px;margin-left:-10px;opacity:0;transform:translateY(14px);animation:hrw 10.5s var(--ease-out) infinite;animation-delay:inherit}
+.hr-sc .hr-w{animation-delay:calc(var(--sd, 0s) + var(--k) * 180ms)}
+.hr-sc:nth-of-type(3){--sd:3.5s}.hr-sc:nth-of-type(4){--sd:7s}
+@keyframes hrw{0%{opacity:0;transform:translateY(14px)}4%{opacity:1;transform:none}31%{opacity:1;transform:none}33.3%{opacity:0}100%{opacity:0}}
+.hr-ic{width:64px;height:64px;margin-bottom:8px}
+.hr-ic svg{width:100%;height:100%}
+.spin svg{animation:spin 8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.bob svg{animation:bob 2.8s var(--ease-in-out) infinite alternate}
+@keyframes bob{from{transform:translateY(-4px) rotate(-8deg)}to{transform:translateY(4px) rotate(8deg)}}
+.hr-foot{position:absolute;left:0;right:0;bottom:0;z-index:3;display:flex;align-items:center;gap:12px;padding:16px 18px;color:inherit}
+/* Formas de marca flotando */
+.float{position:absolute;z-index:2;pointer-events:none}
+.float svg{width:100%;height:100%;display:block}
+.f1{width:64px;height:60px;left:9%;top:14%;animation:fl1 7s var(--ease-in-out) infinite alternate}
+.f2{width:58px;height:60px;right:8%;top:48%;animation:fl2 9s var(--ease-in-out) infinite alternate}
+.f2 svg{animation:spin 14s linear infinite}
+.f3{width:52px;height:54px;left:12%;bottom:12%;animation:fl3 8s var(--ease-in-out) infinite alternate}
+@keyframes fl1{from{transform:translate(0,0) rotate(-10deg)}to{transform:translate(10px,18px) rotate(14deg)}}
+@keyframes fl2{from{transform:translate(0,0)}to{transform:translate(-14px,-20px)}}
+@keyframes fl3{from{transform:translate(0,0) rotate(0deg)}to{transform:translate(16px,-12px) rotate(-20deg)}}
+/* Botón para saltear el recorrido de servicios */
+.svc-skip{position:absolute;top:24px;right:clamp(20px,5vw,72px);z-index:4;display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 18px;border-radius:999px;border:2px solid currentColor;background:transparent;color:inherit;font-family:'Outfit',system-ui,sans-serif;font-size:14px;font-weight:600;cursor:pointer;transition:transform 160ms var(--ease-out),opacity 200ms ease}
+.svc-skip:active{transform:scale(.96)}
+@media (hover:hover) and (pointer:fine){.svc-skip:hover{background:var(--fg,#4B2B08);color:var(--bg,#FFF0B5)}}
+@media (prefers-reduced-motion:reduce){
+  .flowbg,.f1,.f2,.f3,.f2 svg,.spin svg,.bob svg{animation:none}
+  .hr-w{transform:none}
 }
 </style>
 </head>
@@ -441,14 +491,34 @@ a{color:#4B2B08}a:hover{color:#BC2313}
       <p class="in d5" style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase">Bajá <span aria-hidden="true">↓</span></p>
     </div>
     <div style="position: relative; overflow: hidden; min-height: 580px; border-left: 8px solid #FFFFFF; background: #FFF0B5; display: flex; align-items: center; justify-content: center; padding: 56px 24px">
-      <img src="assets/rayas-celeste.svg" alt="" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover">
-      <a class="hero-reel in d3" href="#trabajos" data-story="0" aria-haspopup="dialog" aria-label="Ver el reel de Brio" style="position: relative; width: min(330px, 78%); aspect-ratio: 9 / 16; background: #4B2B08; border-radius: 28px; border: 8px solid #FFFFFF; box-sizing: border-box; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px; text-decoration: none; color: #FFF0B5; box-shadow: 0 28px 56px rgba(75, 43, 8, 0.24)">
-        <span class="play" style="width: 88px; height: 88px; border-radius: 999px; background: #FFF0B5; display: flex; align-items: center; justify-content: center">
-          <svg width="30" height="30" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l13-7.5z" fill="#4B2B08"></path></svg>
+      <span class="flowbg" aria-hidden="true" style="background-image: url(assets/rayas-celeste-tile.svg)"></span>
+      <a class="hero-reel in d3" href="#trabajos" data-story="0" aria-haspopup="dialog" aria-label="Ver el reel de Brio" style="position: relative; width: min(330px, 78%); aspect-ratio: 9 / 16; background: #4B2B08; border-radius: 28px; border: 8px solid #FFFFFF; box-sizing: border-box; display: block; overflow: hidden; text-decoration: none; color: #FFF0B5; box-shadow: 0 28px 56px rgba(75, 43, 8, 0.24)">
+        <span class="hr-bars" aria-hidden="true"><i><b></b></i><i><b></b></i><i><b></b></i></span>
+        <span class="hr-sc" style="background: #4B2B08; color: #FFF0B5" aria-hidden="true">
+          <span class="hr-w" style="--k: 0">POV:</span>
+          <span class="hr-w hl" style="--k: 1; background: #9AC3E8; color: #4B2B08">tu marca</span>
+          <span class="hr-w" style="--k: 2">con ganas</span>
         </span>
-        <span style="font-size: 15px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase">Mirá el reel</span>
-        <span style="font-size: 13px; color: #C9B591">[REEL DESTACADO DE BRIO]</span>
+        <span class="hr-sc" style="background: #9AC3E8; color: #4B2B08" aria-hidden="true">
+          <span class="hr-ic spin"><svg viewBox="0 0 133.4 136.7" aria-hidden="true"><use href="#ast"></use></svg></span>
+          <span class="hr-w" style="--k: 0">3 ideas</span>
+          <span class="hr-w hl" style="--k: 1; background: #FFF0B5">para tu</span>
+          <span class="hr-w" style="--k: 2">próximo reel</span>
+        </span>
+        <span class="hr-sc" style="background: #FFF0B5; color: #4B2B08" aria-hidden="true">
+          <span class="hr-ic bob" style="color: #9AC3E8"><svg viewBox="0 0 115 117.4" aria-hidden="true"><use href="#flor"></use></svg></span>
+          <span class="hr-w" style="--k: 0">Las cosas</span>
+          <span class="hr-w" style="--k: 1">se hacen</span>
+          <span class="hr-w hl" style="--k: 2; background: #4B2B08; color: #FFF0B5">con ganas.</span>
+        </span>
+        <span class="hr-foot" style="color: #4B2B08">
+          <span class="play" style="width: 52px; height: 52px; border-radius: 999px; background: #FFF0B5; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 16px rgba(46,26,5,.25)"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l13-7.5z" fill="#4B2B08"></path></svg></span>
+          <span style="font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; background: #FFF0B5; padding: 6px 10px; border-radius: 999px">Mirá el reel</span>
+        </span>
       </a>
+      <span class="float f1" aria-hidden="true" style="color: #4B2B08"><svg viewBox="0 0 127.5 118.9" aria-hidden="true"><use href="#estrella"></use></svg></span>
+      <span class="float f2" aria-hidden="true" style="color: #FFF0B5"><svg viewBox="0 0 133.4 136.7" aria-hidden="true"><use href="#ast"></use></svg></span>
+      <span class="float f3" aria-hidden="true" style="color: #4B2B08"><svg viewBox="0 0 115 117.4" aria-hidden="true"><use href="#flor"></use></svg></span>
     </div>
   </section>
 
@@ -587,6 +657,7 @@ a{color:#4B2B08}a:hover{color:#BC2313}
     </div>
     <div class="svc-scroll" id="svc-scroll">
       <div class="svc-sticky" id="svc-sticky">
+        <button class="svc-skip" id="svc-skip" type="button">Saltear <span aria-hidden="true">↓</span></button>
         <ol class="svc-names" aria-label="Servicios"><li><button class="svc-name" type="button" data-go="0" aria-current="true"><svg viewBox="0 0 133.4 136.7" aria-hidden="true"><use href="#ast"></use></svg><span>Estrategia</span></button></li><li><button class="svc-name" type="button" data-go="1" aria-current="false"><svg viewBox="0 0 115 117.4" aria-hidden="true"><use href="#flor"></use></svg><span>Contenido</span></button></li><li><button class="svc-name" type="button" data-go="2" aria-current="false"><svg viewBox="0 0 127.5 118.9" aria-hidden="true"><use href="#estrella"></use></svg><span>Gestión de redes</span></button></li><li><button class="svc-name" type="button" data-go="3" aria-current="false"><svg viewBox="0 0 115 117.4" aria-hidden="true"><use href="#flor"></use></svg><span>Pauta en Meta</span></button></li><li><button class="svc-name" type="button" data-go="4" aria-current="false"><svg viewBox="0 0 133.4 136.7" aria-hidden="true"><use href="#ast"></use></svg><span>Resultados</span></button></li></ol>
         <div class="ph-wrap" id="ph-wrap" aria-hidden="true"><div class="ph" id="ph"><div class="ph-in">
           <div class="scr on" data-scr="0" style="background:#FAF0DA;color:#4B2B08">
@@ -639,7 +710,7 @@ a{color:#4B2B08}a:hover{color:#BC2313}
         </div>
       </div>
     </div>
-    <div class="svc-end rv">
+    <div class="svc-end rv" id="svc-end">
       <p style="margin: 0; font-size: clamp(22px, 2.4vw, 32px); font-weight: 700; letter-spacing: -0.01em; max-width: 720px">Sin paquetes cerrados. Cada marca es distinta, así que armamos la propuesta a tu medida.</p>
       <a class="btn btn-dark" href="#contacto" style="display: inline-flex; align-items: center; gap: 10px; min-height: 56px; padding: 0 28px; border-radius: 999px; background: #4B2B08; color: #FFF0B5; text-decoration: none; font-weight: 600; font-size: 17px">Pedí tu propuesta <span class="arr" aria-hidden="true">→</span></a>
     </div>
@@ -836,7 +907,7 @@ a{color:#4B2B08}a:hover{color:#BC2313}
       </dl>
     </div>
     <div style="position: relative; min-height: 440px; overflow: hidden; border-left: 8px solid #FFFFFF">
-      <img src="assets/rayas-rojo-chocolate.svg" alt="" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover">
+      <span class="flowbg slow" aria-hidden="true" style="background-image: url(assets/rayas-rojo-tile.svg); background-color: #4B2B08"></span>
     </div>
   </section>
 
@@ -955,6 +1026,7 @@ function syncDock() { dock.dataset.hidden = (dock.dataset.inContact === 'true' |
     if (e.key === 'Home') { set(0); e.preventDefault(); }
     if (e.key === 'End') { set(100); e.preventDefault(); }
   });
+  cmp.addEventListener('cmp-set', e => { if (!dragging) set(e.detail); });
   new ResizeObserver(() => set(pct)).observe(cmp);
   set(50);
   // Una pista de movimiento, una sola vez, cuando aparece en pantalla
@@ -1340,6 +1412,44 @@ function syncDock() { dock.dataset.hidden = (dock.dataset.inContact === 'true' |
   }));
 
   fitPhone(); activate(0, true); update();
+})();
+
+/* ===== Saltear el recorrido de servicios ===== */
+document.getElementById('svc-skip').addEventListener('click', () => {
+  const end = document.getElementById('svc-end');
+  scrollTo({ top: end.getBoundingClientRect().top + scrollY - 120, behavior: reduceMotion ? 'auto' : 'smooth' });
+});
+
+/* ===== Animaciones decorativas: se pausan fuera de pantalla ===== */
+(() => {
+  const groups = [document.getElementById('inicio'), document.getElementById('contacto')];
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    e.target.querySelectorAll('.flowbg, .hr-sc, .hr-w, .hr-bars b, .float, .float svg, .spin svg, .bob svg')
+      .forEach(el => el.style.animationPlayState = e.isIntersecting ? 'running' : 'paused');
+  }));
+  groups.forEach(g => io.observe(g));
+})();
+
+/* ===== Comparador: se mueve solo hasta que la persona lo toca ===== */
+(() => {
+  if (reduceMotion) return;
+  const cmp = document.getElementById('cmp'), knob = document.getElementById('cmp-knob');
+  let on = true, vis = false, raf = 0, t0 = 0;
+  const stop = () => { on = false; cancelAnimationFrame(raf); };
+  cmp.addEventListener('pointerdown', stop, { capture: true });
+  knob.addEventListener('focus', stop);
+  const loop = now => {
+    if (!on || !vis) return;
+    if (!t0) t0 = now;
+    const x = 50 + 32 * Math.sin((now - t0) / 1600);      // vaivén suave
+    cmp.dispatchEvent(new CustomEvent('cmp-set', { detail: x }));
+    raf = requestAnimationFrame(loop);
+  };
+  new IntersectionObserver(([e]) => {
+    vis = e.isIntersecting;
+    if (vis && on) { t0 = 0; setTimeout(() => { cancelAnimationFrame(raf); raf = requestAnimationFrame(loop); }, 2200); }
+    else cancelAnimationFrame(raf);
+  }, { threshold: 0.5 }).observe(cmp);
 })();
 </script>
 </body>
