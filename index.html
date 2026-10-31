@@ -570,6 +570,7 @@ a{color:#4B2B08}a:hover{color:#BC2313}
   .ds{transition:opacity 200ms ease}
 }
 
+@media (max-width:1000px) and (min-width:701px){.reels-car{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
 /* ===== Celular ===== */
 .secbar,.clients-mq,.swipe-hint{display:none}
 @media (max-width:700px){
@@ -585,7 +586,7 @@ a{color:#4B2B08}a:hover{color:#BC2313}
   .car{display:flex!important;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scrollbar-width:none;margin:0 -20px!important;padding:4px 20px 8px!important;gap:10px!important;-webkit-overflow-scrolling:touch}
   .car::-webkit-scrollbar{display:none}
   .car > *{flex:0 0 78%;scroll-snap-align:center;scroll-snap-stop:always}
-  .reels-car > *{flex-basis:62%}
+  .reels-car > *{flex-basis:58%}
   .bento.car > .bt{flex-basis:84%;min-height:420px;grid-column:auto!important;grid-row:auto!important}
   .car .rv-clip{animation:none!important}
   .swipe-hint{display:flex;align-items:center;gap:6px;margin:-24px 0 0;font-size:13px;font-weight:600;opacity:.7}
@@ -988,26 +989,46 @@ a{color:#4B2B08}a:hover{color:#BC2313}
       </div>
       <a class="btn" href="https://instagram.com/brio.comunicacion" style="display: inline-flex; align-items: center; gap: 10px; min-height: 48px; color: #9AC3E8; font-weight: 600; font-size: 17px; text-decoration: none">Ver todo en Instagram <span class="arr" aria-hidden="true">→</span></a>
     </div>
-    <div class="car reels-car" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 8px">
-      <a class="reel rv-clip" href="#trabajos" data-story="1" aria-haspopup="dialog" style="aspect-ratio: 9 / 16; background: #9AC3E8; color: #4B2B08; border-radius: 24px; display: flex; flex-direction: column; justify-content: space-between; padding: 24px; box-sizing: border-box; text-decoration: none">
-        <span style="font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase">Reel · [CLIENTE]</span>
-        <span class="play" style="align-self: center; width: 76px; height: 76px; border-radius: 999px; background: #4B2B08; display: flex; align-items: center; justify-content: center"><svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l13-7.5z" fill="#FFF0B5"></path></svg></span>
-        <span style="font-size: 20px; font-weight: 600; line-height: 1.2">[Qué hicimos en una línea]</span>
+    <div class="car reels-car" style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px">
+      <a class="reel rv-clip" href="#trabajos" data-story="1" aria-haspopup="dialog" style="aspect-ratio: 4 / 5; background: #9AC3E8; color: #4B2B08; border-radius: 20px; display: flex; flex-direction: column; justify-content: space-between; padding: 18px; box-sizing: border-box; text-decoration: none">
+        <span style="font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase">Reel · [CLIENTE]</span>
+        <span class="play" style="align-self: center; width: 56px; height: 56px; border-radius: 999px; background: #4B2B08; display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l13-7.5z" fill="#FFF0B5"></path></svg></span>
+        <span style="font-size: 16px; font-weight: 600; line-height: 1.2">[Qué hicimos en una línea]</span>
       </a>
-      <a class="reel rv-clip" href="#trabajos" data-story="2" aria-haspopup="dialog" style="aspect-ratio: 9 / 16; background: #FFF0B5; color: #4B2B08; border-radius: 24px; display: flex; flex-direction: column; justify-content: space-between; padding: 24px; box-sizing: border-box; text-decoration: none">
-        <span style="font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase">Campaña · [CLIENTE]</span>
-        <span class="play" style="align-self: center; width: 76px; height: 76px; border-radius: 999px; background: #4B2B08; display: flex; align-items: center; justify-content: center"><svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l13-7.5z" fill="#FFF0B5"></path></svg></span>
-        <span style="font-size: 20px; font-weight: 600; line-height: 1.2">[Qué hicimos en una línea]</span>
+      <a class="reel rv-clip" href="#trabajos" data-story="2" aria-haspopup="dialog" style="aspect-ratio: 4 / 5; background: #FFF0B5; color: #4B2B08; border-radius: 20px; display: flex; flex-direction: column; justify-content: space-between; padding: 18px; box-sizing: border-box; text-decoration: none">
+        <span style="font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase">Campaña · [CLIENTE]</span>
+        <span class="play" style="align-self: center; width: 56px; height: 56px; border-radius: 999px; background: #4B2B08; display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l13-7.5z" fill="#FFF0B5"></path></svg></span>
+        <span style="font-size: 16px; font-weight: 600; line-height: 1.2">[Qué hicimos en una línea]</span>
       </a>
-      <a class="reel rv-clip" href="#trabajos" data-story="3" aria-haspopup="dialog" style="aspect-ratio: 9 / 16; background: #FAF0DA; color: #4B2B08; border-radius: 24px; display: flex; flex-direction: column; justify-content: space-between; padding: 24px; box-sizing: border-box; text-decoration: none">
-        <span style="font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase">Historias · [CLIENTE]</span>
-        <span class="play" style="align-self: center; width: 76px; height: 76px; border-radius: 999px; background: #4B2B08; display: flex; align-items: center; justify-content: center"><svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l13-7.5z" fill="#FFF0B5"></path></svg></span>
-        <span style="font-size: 20px; font-weight: 600; line-height: 1.2">[Qué hicimos en una línea]</span>
+      <a class="reel rv-clip" href="#trabajos" data-story="3" aria-haspopup="dialog" style="aspect-ratio: 4 / 5; background: #4B2B08; color: #FFF0B5; border-radius: 20px; display: flex; flex-direction: column; justify-content: space-between; padding: 18px; box-sizing: border-box; text-decoration: none">
+        <span style="font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase">Reel · [CLIENTE]</span>
+        <span class="play" style="align-self: center; width: 56px; height: 56px; border-radius: 999px; background: #FFF0B5; display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l13-7.5z" fill="#4B2B08"></path></svg></span>
+        <span style="font-size: 16px; font-weight: 600; line-height: 1.2">[Qué hicimos en una línea]</span>
       </a>
-      <a class="reel rv-clip" href="#trabajos" data-story="4" aria-haspopup="dialog" style="aspect-ratio: 9 / 16; background: #422F2C; color: #FFF0B5; border-radius: 24px; display: flex; flex-direction: column; justify-content: space-between; padding: 24px; box-sizing: border-box; text-decoration: none; border: 2px solid #9AC3E8">
-        <span style="font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase">Reel · [CLIENTE]</span>
-        <span class="play" style="align-self: center; width: 76px; height: 76px; border-radius: 999px; background: #FFF0B5; display: flex; align-items: center; justify-content: center"><svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l13-7.5z" fill="#4B2B08"></path></svg></span>
-        <span style="font-size: 20px; font-weight: 600; line-height: 1.2">[Qué hicimos en una línea]</span>
+      <a class="reel rv-clip" href="#trabajos" data-story="4" aria-haspopup="dialog" style="aspect-ratio: 4 / 5; background: #FAF0DA; color: #4B2B08; border-radius: 20px; display: flex; flex-direction: column; justify-content: space-between; padding: 18px; box-sizing: border-box; text-decoration: none">
+        <span style="font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase">Historias · [CLIENTE]</span>
+        <span class="play" style="align-self: center; width: 56px; height: 56px; border-radius: 999px; background: #4B2B08; display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l13-7.5z" fill="#FFF0B5"></path></svg></span>
+        <span style="font-size: 16px; font-weight: 600; line-height: 1.2">[Qué hicimos en una línea]</span>
+      </a>
+      <a class="reel rv-clip" href="#trabajos" data-story="5" aria-haspopup="dialog" style="aspect-ratio: 4 / 5; background: #422F2C; color: #FFF0B5; border-radius: 20px; display: flex; flex-direction: column; justify-content: space-between; padding: 18px; box-sizing: border-box; text-decoration: none">
+        <span style="font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase">Reel · [CLIENTE]</span>
+        <span class="play" style="align-self: center; width: 56px; height: 56px; border-radius: 999px; background: #9AC3E8; display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l13-7.5z" fill="#4B2B08"></path></svg></span>
+        <span style="font-size: 16px; font-weight: 600; line-height: 1.2">[Qué hicimos en una línea]</span>
+      </a>
+      <a class="reel rv-clip" href="#trabajos" data-story="6" aria-haspopup="dialog" style="aspect-ratio: 4 / 5; background: #9AC3E8; color: #4B2B08; border-radius: 20px; display: flex; flex-direction: column; justify-content: space-between; padding: 18px; box-sizing: border-box; text-decoration: none">
+        <span style="font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase">Reel · [CLIENTE]</span>
+        <span class="play" style="align-self: center; width: 56px; height: 56px; border-radius: 999px; background: #FFF0B5; display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l13-7.5z" fill="#4B2B08"></path></svg></span>
+        <span style="font-size: 16px; font-weight: 600; line-height: 1.2">[Qué hicimos en una línea]</span>
+      </a>
+      <a class="reel rv-clip" href="#trabajos" data-story="7" aria-haspopup="dialog" style="aspect-ratio: 4 / 5; background: #FFFFFF; color: #4B2B08; border-radius: 20px; display: flex; flex-direction: column; justify-content: space-between; padding: 18px; box-sizing: border-box; text-decoration: none">
+        <span style="font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase">Campaña · [CLIENTE]</span>
+        <span class="play" style="align-self: center; width: 56px; height: 56px; border-radius: 999px; background: #4B2B08; display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l13-7.5z" fill="#FFF0B5"></path></svg></span>
+        <span style="font-size: 16px; font-weight: 600; line-height: 1.2">[Qué hicimos en una línea]</span>
+      </a>
+      <a class="reel rv-clip" href="#trabajos" data-story="8" aria-haspopup="dialog" style="aspect-ratio: 4 / 5; background: #FFF0B5; color: #4B2B08; border-radius: 20px; display: flex; flex-direction: column; justify-content: space-between; padding: 18px; box-sizing: border-box; text-decoration: none">
+        <span style="font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase">Reel · [CLIENTE]</span>
+        <span class="play" style="align-self: center; width: 56px; height: 56px; border-radius: 999px; background: #9AC3E8; display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l13-7.5z" fill="#4B2B08"></path></svg></span>
+        <span style="font-size: 16px; font-weight: 600; line-height: 1.2">[Qué hicimos en una línea]</span>
       </a>
     </div>
     <p class="swipe-hint" aria-hidden="true"><span></span><span></span><span></span>Deslizá para ver más</p>
@@ -1313,8 +1334,12 @@ function syncDock() { dock.dataset.hidden = (dock.dataset.inContact === 'true' |
     { client: 'Reel de Brio', label: '[REEL DESTACADO DE BRIO]', video: '', bg: '#4B2B08', fg: '#FFF0B5', deco: 'ast', decoColor: '#9AC3E8' },
     { client: '[CLIENTE 1] · Reel', label: '[Qué hicimos en una línea]', video: '', bg: '#9AC3E8', fg: '#4B2B08', deco: 'flor', decoColor: '#FFF0B5' },
     { client: '[CLIENTE 2] · Campaña', label: '[Qué hicimos en una línea]', video: '', bg: '#FFF0B5', fg: '#4B2B08', deco: 'estrella', decoColor: '#9AC3E8' },
-    { client: '[CLIENTE 3] · Historias', label: '[Qué hicimos en una línea]', video: '', bg: '#FAF0DA', fg: '#4B2B08', deco: 'ast', decoColor: '#9AC3E8' },
-    { client: '[CLIENTE 4] · Reel', label: '[Qué hicimos en una línea]', video: '', bg: '#422F2C', fg: '#FFF0B5', deco: 'flor', decoColor: '#9AC3E8' },
+    { client: '[CLIENTE 3] · Reel', label: '[Qué hicimos en una línea]', video: '', bg: '#4B2B08', fg: '#FFF0B5', deco: 'ast', decoColor: '#9AC3E8' },
+    { client: '[CLIENTE 4] · Historias', label: '[Qué hicimos en una línea]', video: '', bg: '#FAF0DA', fg: '#4B2B08', deco: 'flor', decoColor: '#9AC3E8' },
+    { client: '[CLIENTE 5] · Reel', label: '[Qué hicimos en una línea]', video: '', bg: '#422F2C', fg: '#FFF0B5', deco: 'ast', decoColor: '#9AC3E8' },
+    { client: '[CLIENTE 6] · Reel', label: '[Qué hicimos en una línea]', video: '', bg: '#9AC3E8', fg: '#4B2B08', deco: 'estrella', decoColor: '#FFF0B5' },
+    { client: '[CLIENTE 7] · Campaña', label: '[Qué hicimos en una línea]', video: '', bg: '#FFFFFF', fg: '#4B2B08', deco: 'flor', decoColor: '#9AC3E8' },
+    { client: '[CLIENTE 8] · Reel', label: '[Qué hicimos en una línea]', video: '', bg: '#FFF0B5', fg: '#4B2B08', deco: 'ast', decoColor: '#9AC3E8' },
   ];
   const DURATION = 6000; // ms por historia sin video
   const VB = { ast: '0 0 133.4 136.7', flor: '0 0 115 117.4', estrella: '0 0 127.5 118.9' };
