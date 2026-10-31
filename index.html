@@ -219,8 +219,9 @@ a{color:#4B2B08}a:hover{color:#BC2313}
 .flow-arrow{width:52px;height:52px;border-radius:999px;border:2px solid #4B2B08;background:#FFFFFF;color:#4B2B08;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:transform 160ms var(--ease-out),background-color 200ms ease,opacity 200ms ease}
 .flow-arrow:active{transform:scale(.94)}
 .flow-arrow:disabled{opacity:.3;cursor:default}
-.flow-auto{height:4px;flex:1;min-width:80px;border-radius:2px;background:#F3E6C6;overflow:hidden}
-.flow-auto i{display:block;height:100%;background:#9AC3E8;transform-origin:left;transform:scaleX(0)}
+.flow-segs{display:flex;gap:6px;flex:1;min-width:120px}
+.flow-segs span{flex:1;height:5px;border-radius:3px;background:#F3E6C6;overflow:hidden}
+.flow-segs i{display:block;height:100%;background:#4B2B08;transform-origin:left;transform:scaleX(0);transition:transform 300ms var(--ease-out)}
 .flow-stage{position:relative;border-radius:24px;overflow:hidden;min-height:380px;background:#9AC3E8}
 .scene{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:28px;opacity:0;visibility:hidden;transition:opacity 250ms var(--ease-out),visibility 0s 250ms}
 .scene.on{opacity:1;visibility:visible;transition:opacity 250ms var(--ease-out),visibility 0s}
@@ -1063,7 +1064,7 @@ a{color:#4B2B08}a:hover{color:#BC2313}
           <div class="flow-nav">
             <button class="flow-arrow" type="button" id="flow-prev" aria-label="Paso anterior">←</button>
             <button class="flow-arrow" type="button" id="flow-next" aria-label="Paso siguiente">→</button>
-            <span class="flow-auto" aria-hidden="true"><i id="flow-auto"></i></span>
+            <span class="flow-segs" aria-hidden="true"><span><i></i></span><span><i></i></span><span><i></i></span><span><i></i></span></span>
           </div>
         </div>
 
@@ -1473,7 +1474,7 @@ function syncDock() { dock.dataset.hidden = (dock.dataset.inContact === 'true' |
   const copy = document.getElementById('flow-copy');
   const elTime = document.getElementById('flow-time'), elTitle = document.getElementById('flow-title'), elText = document.getElementById('flow-text');
   const prevB = document.getElementById('flow-prev'), nextB = document.getElementById('flow-next');
-  const autoBar = document.getElementById('flow-auto');
+  const segs = [...document.querySelectorAll('.flow-segs i')];
   const scenes = [...document.querySelectorAll('.scene')];
   const timer = document.getElementById('call-timer');
   let L = 1;
@@ -1576,10 +1577,13 @@ function syncDock() { dock.dataset.hidden = (dock.dataset.inContact === 'true' |
   // Avance automático: sólo mientras se ve, hasta que la persona toca algo
   let autoOn = !reduceMotion, visible = false, autoAnim = null;
   function restartAuto() {
-    if (autoAnim) autoAnim.cancel();
-    autoBar.style.transform = 'scaleX(0)';
-    if (!autoOn || !visible || cur === STEPS.length - 1) return;
-    autoAnim = autoBar.animate([{ transform: 'scaleX(0)' }, { transform: 'scaleX(1)' }], { duration: AUTO_MS, easing: 'linear', fill: 'forwards' });
+    if (autoAnim) { autoAnim.cancel(); autoAnim = null; }
+    // Tramos: los pasos hechos y el actual quedan llenos
+    const timed = autoOn && visible && cur < STEPS.length - 1;
+    segs.forEach((g, k) => g.style.transform = `scaleX(${k < cur || (k === cur && !timed) ? 1 : 0})`);
+    if (!timed) return;
+    // Con avance automático, el tramo actual se llena con el tiempo
+    autoAnim = segs[cur].animate([{ transform: 'scaleX(0)' }, { transform: 'scaleX(1)' }], { duration: AUTO_MS, easing: 'linear', fill: 'forwards' });
     autoAnim.onfinish = () => go(cur + 1);
   }
   function stopAuto() { autoOn = false; restartAuto(); }
