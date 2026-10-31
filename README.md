@@ -13,7 +13,7 @@ Abrí `index.html` en el navegador.
 - En `index.html` hay tres datos que se cargan una sola vez y se aplican a toda la página:
   - `const WHATSAPP = '[NUMERO]'`: número con código de país, solo dígitos (ej: `59899123456`).
   - `const TELEFONO = '[TELEFONO]'`: para el botón Llamar, mismo formato.
-  - `const INSTAGRAM = '[USUARIO_BRIO]'`: usuario de Instagram, sin @.
+  - `const INSTAGRAM = 'brio.comunicacion'`: usuario de Instagram, sin @ (ya cargado).
 - Videos de los trabajos: en `index.html`, en la lista `STORIES`, completá `video` con la ruta de cada reel (ej: `assets/reels/cliente1.mp4`).
 - Todo lo que está entre `[CORCHETES]`: clientes, reels, testimonio, mail y dos respuestas de preguntas frecuentes.
 
