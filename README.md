@@ -15,7 +15,7 @@ Abrí `index.html` en el navegador.
   - `const TELEFONO = '59898123700'`: para el botón Llamar (ya cargado).
   - `const INSTAGRAM = 'brio.comunicacion'`: usuario de Instagram, sin @ (ya cargado).
 - Videos de los trabajos: en `index.html`, en la lista `STORIES`, completá `video` con la ruta de cada reel (ej: `assets/reels/cliente1.mp4`).
-- Todo lo que está entre `[CORCHETES]`: clientes, reels y testimonio.
+- Todo lo que está entre `[CORCHETES]`: reels.
 
 ## Publicar
 
