@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Brio · Agencia de gestión creativa de redes</title>
-<meta name="description" content="Estrategia, contenido y pauta para marcas que quieren que las miren. Agencia de gestión creativa de redes en Montevideo.">
+<meta name="description" content="Redes, branding, campañas, piezas gráficas, páginas web y herramientas a medida. Agencia creativa en Montevideo.">
 <meta property="og:title" content="Brio · Redes con ganas">
 <meta property="og:description" content="Estrategia, contenido y pauta para marcas que quieren que las miren.">
 <meta name="theme-color" content="#FFF0B5">
@@ -447,6 +447,127 @@ a{color:#4B2B08}a:hover{color:#BC2313}
   .flowbg,.f1,.f2,.f3,.f2 svg,.spin svg,.bob svg{animation:none}
   .hr-w{transform:none}
 }
+
+/* ===== Capítulos B y C de Qué hacemos ===== */
+.svc-chap{position:absolute;top:34px;left:clamp(20px,5vw,72px);z-index:4;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;opacity:.75}
+.chap{padding:clamp(56px,7vw,112px) clamp(20px,5vw,72px);display:flex;flex-direction:column;gap:40px}
+.chap-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:20px}
+.chap-head h3{margin:0;font-size:clamp(38px,5vw,76px);line-height:.95;font-weight:700;letter-spacing:-.035em}
+.chap-tag{font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;opacity:.75}
+.bento{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px}
+.bt{position:relative;border-radius:24px;padding:28px;display:flex;flex-direction:column;gap:10px;overflow:hidden;min-height:340px;box-sizing:border-box}
+.bt h4{margin:0;font-size:clamp(26px,2.4vw,36px);font-weight:700;letter-spacing:-.02em;line-height:1}
+.bt p{margin:0;font-size:16px;line-height:1.45;max-width:420px;opacity:.85}
+.bt-vis{position:relative;flex:1;min-height:170px;display:flex;align-items:center;justify-content:center}
+.b-brand{grid-column:1/5;background:#FFFFFF;border:2px solid #4B2B08}
+.b-cart{grid-column:5/7;grid-row:1/3;background:#9AC3E8}
+.b-camp{grid-column:1/3;background:#4B2B08;color:#FFF0B5}
+.b-acc{grid-column:3/5;background:#FFF0B5}
+@media (max-width:900px){.bento{grid-template-columns:1fr}.b-brand,.b-cart,.b-camp,.b-acc{grid-column:auto;grid-row:auto}}
+/* Branding */
+.brand-row{display:flex;align-items:center;gap:clamp(16px,3vw,40px);flex-wrap:wrap;justify-content:center}
+.brand-aa{font-size:clamp(80px,9vw,128px);font-weight:700;letter-spacing:-.05em;line-height:.9;animation:aa 6s var(--ease-in-out) infinite}
+@keyframes aa{0%,40%{font-weight:700}50%,90%{font-weight:300}100%{font-weight:700}}
+.brand-sw{display:flex;gap:8px}
+.brand-sw i{width:44px;height:88px;border-radius:999px;animation:sw 3.2s var(--ease-in-out) infinite;animation-delay:calc(var(--k) * 160ms)}
+@keyframes sw{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+.brand-mark{width:84px;height:84px;color:#BC2313}
+.brand-mark svg{width:100%;height:100%;animation:spin 10s linear infinite}
+/* Cartelería: cartel colgando */
+.hang{position:relative;width:min(220px,70%);display:flex;flex-direction:column;align-items:center;transform-origin:50% 0;animation:swing 3.4s var(--ease-in-out) infinite alternate}
+@keyframes swing{from{transform:rotate(-4deg)}to{transform:rotate(4deg)}}
+.hang-str{width:60%;height:46px;border:2px solid #4B2B08;border-bottom:0;border-radius:40px 40px 0 0;box-sizing:border-box}
+.poster{width:100%;aspect-ratio:3/4;background:#4B2B08;color:#FFF0B5;border-radius:10px;padding:18px;box-sizing:border-box;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 18px 36px rgba(46,26,5,.25)}
+.poster b{font-size:28px;line-height:.95;letter-spacing:-.03em;font-weight:800}
+.poster .pm{width:46px;height:46px;color:#9AC3E8}
+.poster .pm svg{width:100%;height:100%}
+.flyer{position:absolute;width:38%;aspect-ratio:3/4;border-radius:8px;background:#FFF0B5;right:4%;bottom:6%;transform:rotate(9deg);display:flex;align-items:center;justify-content:center;color:#4B2B08;box-shadow:0 10px 24px rgba(46,26,5,.18);animation:fly 5s var(--ease-in-out) infinite alternate}
+.flyer svg{width:46%;height:46%}
+@keyframes fly{from{transform:rotate(9deg) translateY(0)}to{transform:rotate(13deg) translateY(-10px)}}
+/* Campañas: palabras que cambian */
+.cyc{position:relative;width:100%;height:150px}
+.cyc span{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;border-radius:16px;font-size:clamp(26px,2.6vw,36px);font-weight:800;letter-spacing:-.03em;line-height:1;padding:12px;opacity:0;transform:scale(.96);animation:cyc 9s var(--ease-out) infinite}
+.cyc span:nth-child(2){animation-delay:3s}.cyc span:nth-child(3){animation-delay:6s}
+@keyframes cyc{0%{opacity:0;transform:scale(.96)}4%{opacity:1;transform:none}30%{opacity:1;transform:none}34%{opacity:0;transform:scale(1.03)}100%{opacity:0}}
+/* Acciones: mazo de tarjetas */
+.deck{position:relative;width:min(240px,86%);height:150px}
+.deck span{position:absolute;left:0;right:0;top:20px;height:110px;border-radius:16px;display:flex;flex-direction:column;justify-content:center;gap:4px;padding:0 18px;font-weight:700;font-size:22px;letter-spacing:-.02em;box-shadow:0 10px 24px rgba(46,26,5,.14);animation:deck 8s var(--ease-in-out) infinite;animation-delay:calc(var(--k) * -2s)}
+.deck span small{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;opacity:.7}
+@keyframes deck{
+  0%{transform:translateY(0) scale(1);opacity:1;z-index:4}
+  21%{transform:translateY(0) scale(1);opacity:1;z-index:4}
+  25%{transform:translateY(-40px) scale(1.02) rotate(-4deg);opacity:0;z-index:4}
+  26%{transform:translateY(-36px) scale(.86);opacity:0;z-index:1}
+  32%{transform:translateY(-36px) scale(.86);opacity:.5;z-index:1}
+  50%{transform:translateY(-24px) scale(.9);opacity:.75;z-index:2}
+  75%{transform:translateY(-12px) scale(.95);opacity:.9;z-index:3}
+  100%{transform:translateY(0) scale(1);opacity:1;z-index:4}}
+/* Digital */
+.dig{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:8px;align-items:stretch}
+@media (max-width:900px){.dig{grid-template-columns:1fr}}
+.dig-copy{background:#4B2B08;color:#FFF0B5;border-radius:24px;padding:clamp(28px,4vw,44px);display:flex;flex-direction:column;gap:18px}
+.dig-tabs{display:flex;flex-direction:column;gap:6px;margin:6px 0}
+.dig-tab{position:relative;display:flex;align-items:center;gap:12px;min-height:54px;padding:0 18px;border-radius:14px;border:0;background:#3A2106;color:#E6D6A8;font-family:'Outfit',system-ui,sans-serif;font-size:17px;font-weight:600;cursor:pointer;text-align:left;overflow:hidden;transition:background-color 200ms ease,color 200ms ease,transform 160ms var(--ease-out)}
+.dig-tab:active{transform:scale(.98)}
+.dig-tab[aria-selected="true"]{background:#FFF0B5;color:#4B2B08}
+.dig-tab i{position:absolute;left:0;bottom:0;height:3px;width:100%;background:#9AC3E8;transform-origin:left;transform:scaleX(0)}
+@media (hover:hover) and (pointer:fine){.dig-tab:hover{color:#FFF0B5}.dig-tab[aria-selected="true"]:hover{color:#4B2B08}}
+.dig-stage{background:#9AC3E8;border-radius:24px;padding:clamp(18px,3vw,40px);display:flex;align-items:center;justify-content:center;min-height:440px}
+.bw{width:100%;max-width:600px;background:#FFFFFF;border-radius:16px;overflow:hidden;box-shadow:0 30px 60px rgba(46,26,5,.22)}
+.bw-top{display:flex;align-items:center;gap:8px;padding:10px 14px;background:#FAF0DA;border-bottom:1px solid #E9D9B6}
+.bw-top i{width:10px;height:10px;border-radius:999px;background:#E2CFA6}
+.bw-url{flex:1;margin-left:8px;padding:6px 12px;border-radius:999px;background:#FFFFFF;font-size:12px;color:#7A5C3E;font-variant-numeric:tabular-nums}
+.bw-body{position:relative;height:330px}
+.ds{position:absolute;inset:0;padding:18px;opacity:0;visibility:hidden;transition:opacity 280ms var(--ease-out),visibility 0s 280ms;display:flex;flex-direction:column;gap:10px;color:#4B2B08;font-size:13px}
+.ds.on{opacity:1;visibility:visible;transition:opacity 280ms var(--ease-out),visibility 0s}
+.ds [data-a]{opacity:0}
+.ds.play [data-a]{animation:pop 420ms var(--ease-out) both;animation-delay:var(--d,0ms)}
+/* web */
+.w-nav{display:flex;justify-content:space-between;align-items:center}
+.w-nav b{font-size:15px}
+.w-nav span{display:flex;gap:8px}.w-nav span i{width:34px;height:7px;border-radius:4px;background:#E9D9B6}
+.w-hero{flex:1;border-radius:12px;background:#FFF0B5;display:grid;grid-template-columns:1.2fr 1fr;gap:14px;padding:18px;align-items:center}
+.w-hero h5{margin:0;font-size:26px;line-height:1;letter-spacing:-.03em}
+.w-btn{display:inline-block;margin-top:12px;padding:8px 14px;border-radius:999px;background:#4B2B08;color:#FFF0B5;font-weight:700;font-size:12px}
+.w-img{height:100%;min-height:120px;border-radius:10px;background:#9AC3E8;display:flex;align-items:center;justify-content:center;color:#4B2B08}
+.w-img svg{width:50%;height:50%}
+.w-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.w-cards i{height:48px;border-radius:10px;background:#FAF0DA}
+/* agenda */
+.ag-h{display:flex;justify-content:space-between;align-items:center;font-weight:700;font-size:15px}
+.ag{display:grid;grid-template-columns:48px repeat(5,1fr);grid-template-rows:auto repeat(4,1fr);gap:5px;flex:1}
+.ag b{font-size:11px;text-align:center;opacity:.6}
+.ag em{font-style:normal;font-size:11px;opacity:.6;display:flex;align-items:center}
+.ag span{border-radius:8px;background:#FAF0DA;min-height:36px}
+.ag span.busy{background:#E9D9B6}
+.ag span.pick{background:#FAF0DA}
+.ds.play .ag span.pick{animation:pick 2.4s var(--ease-out) 600ms both}
+@keyframes pick{0%{background:#FAF0DA;box-shadow:0 0 0 0 rgba(154,195,232,0)}30%{background:#9AC3E8;box-shadow:0 0 0 6px rgba(154,195,232,.45)}60%,100%{background:#4B2B08;box-shadow:0 0 0 0 rgba(154,195,232,0)}}
+.ag-toast{position:absolute;left:18px;right:18px;bottom:16px;display:flex;align-items:center;gap:10px;padding:12px 14px;border-radius:12px;background:#4B2B08;color:#FFF0B5;font-weight:600;transform:translateY(140%)}
+.ds.play .ag-toast{animation:toastin 400ms var(--ease-out) 1900ms both}
+@keyframes toastin{from{transform:translateY(140%)}to{transform:none}}
+.ag-toast b{width:22px;height:22px;border-radius:999px;background:#9AC3E8;color:#4B2B08;display:flex;align-items:center;justify-content:center}
+/* tablero */
+.tb-k{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.tb-k div{background:#FAF0DA;border-radius:10px;padding:10px;display:flex;flex-direction:column;gap:6px;font-weight:600;font-size:11px}
+.tb-k div i{height:8px;border-radius:4px;background:#4B2B08;width:var(--w)}
+.tb-c{flex:1;background:#FAF0DA;border-radius:12px;padding:12px;display:flex;align-items:flex-end;gap:8px}
+.tb-c i{flex:1;height:var(--h);border-radius:6px 6px 2px 2px;background:#9AC3E8;transform-origin:bottom;transform:scaleY(0)}
+.tb-c i:last-child{background:#4B2B08}
+.ds.play .tb-c i{animation:up-bar 600ms var(--ease-out) both;animation-delay:var(--d)}
+/* organizador */
+.kb{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;flex:1;position:relative}
+.kb-col{background:#FAF0DA;border-radius:12px;padding:8px;display:flex;flex-direction:column;gap:6px}
+.kb-col b{font-size:11px;letter-spacing:.06em;text-transform:uppercase;opacity:.7;padding:2px 4px}
+.kb-card{background:#FFFFFF;border-radius:8px;padding:8px;font-weight:600;font-size:12px;box-shadow:0 1px 0 #E9D9B6}
+.kb-move{position:absolute;left:8px;top:36px;box-sizing:border-box;width:calc((100% - 16px) / 3 - 16px);background:#4B2B08;color:#FFF0B5;border-radius:8px;padding:8px;font-weight:600;font-size:12px;box-shadow:0 10px 20px rgba(46,26,5,.2)}
+.ds.play .kb-move{animation:kb 3.2s var(--ease-in-out) 500ms both}
+@keyframes kb{0%,10%{transform:translateX(0) rotate(0)}20%{transform:translateX(0) rotate(-3deg)}45%,55%{transform:translateX(calc(100% + 24px)) rotate(-3deg)}65%{transform:translateX(calc(100% + 24px)) rotate(0)}85%,100%{transform:translateX(calc(200% + 48px)) rotate(0)}}
+@media (prefers-reduced-motion:reduce){
+  .brand-aa,.brand-sw i,.brand-mark svg,.hang,.flyer,.deck span{animation:none}
+  .cyc span{animation:none}.cyc span:first-child{opacity:1;transform:none}
+  .deck span{transform:translateY(calc(var(--k) * -12px))}
+  .ds{transition:opacity 200ms ease}
+}
 </style>
 </head>
 <body>
@@ -525,8 +646,8 @@ a{color:#4B2B08}a:hover{color:#BC2313}
   <!-- MARQUEE -->
   <div class="marquee" aria-label="Las cosas se hacen con ganas" role="img" style="background: #9AC3E8; padding: 22px 0">
     <div class="marquee-track" aria-hidden="true" style="gap: 40px; font-size: clamp(28px, 3.4vw, 48px); font-weight: 700; letter-spacing: -0.01em; text-transform: uppercase; white-space: nowrap">
-      <span style="display: flex; align-items: center; gap: 40px">Las cosas se hacen con ganas <svg width="40" height="41" viewBox="0 0 133.4 136.7"><use href="#ast"></use></svg> Reels <svg width="40" height="41" viewBox="0 0 115 117.4"><use href="#flor"></use></svg> Historias <svg width="40" height="37" viewBox="0 0 127.5 118.9"><use href="#estrella"></use></svg> Pauta en Meta <svg width="40" height="41" viewBox="0 0 133.4 136.7"><use href="#ast"></use></svg> Estrategia <svg width="40" height="41" viewBox="0 0 115 117.4"><use href="#flor"></use></svg></span>
-      <span style="display: flex; align-items: center; gap: 40px">Las cosas se hacen con ganas <svg width="40" height="41" viewBox="0 0 133.4 136.7"><use href="#ast"></use></svg> Reels <svg width="40" height="41" viewBox="0 0 115 117.4"><use href="#flor"></use></svg> Historias <svg width="40" height="37" viewBox="0 0 127.5 118.9"><use href="#estrella"></use></svg> Pauta en Meta <svg width="40" height="41" viewBox="0 0 133.4 136.7"><use href="#ast"></use></svg> Estrategia <svg width="40" height="41" viewBox="0 0 115 117.4"><use href="#flor"></use></svg></span>
+      <span style="display: flex; align-items: center; gap: 40px">Las cosas se hacen con ganas <svg width="40" height="41" viewBox="0 0 133.4 136.7"><use href="#ast"></use></svg> Reels <svg width="40" height="41" viewBox="0 0 115 117.4"><use href="#flor"></use></svg> Historias <svg width="40" height="37" viewBox="0 0 127.5 118.9"><use href="#estrella"></use></svg> Pauta en Meta <svg width="40" height="41" viewBox="0 0 133.4 136.7"><use href="#ast"></use></svg> Branding <svg width="40" height="37" viewBox="0 0 127.5 118.9"><use href="#estrella"></use></svg> Campañas <svg width="40" height="41" viewBox="0 0 115 117.4"><use href="#flor"></use></svg> Páginas web <svg width="40" height="41" viewBox="0 0 115 117.4"><use href="#flor"></use></svg></span>
+      <span style="display: flex; align-items: center; gap: 40px">Las cosas se hacen con ganas <svg width="40" height="41" viewBox="0 0 133.4 136.7"><use href="#ast"></use></svg> Reels <svg width="40" height="41" viewBox="0 0 115 117.4"><use href="#flor"></use></svg> Historias <svg width="40" height="37" viewBox="0 0 127.5 118.9"><use href="#estrella"></use></svg> Pauta en Meta <svg width="40" height="41" viewBox="0 0 133.4 136.7"><use href="#ast"></use></svg> Branding <svg width="40" height="37" viewBox="0 0 127.5 118.9"><use href="#estrella"></use></svg> Campañas <svg width="40" height="41" viewBox="0 0 115 117.4"><use href="#flor"></use></svg> Páginas web <svg width="40" height="41" viewBox="0 0 115 117.4"><use href="#flor"></use></svg></span>
     </div>
   </div>
 
@@ -651,12 +772,13 @@ a{color:#4B2B08}a:hover{color:#BC2313}
     <div class="svc-head rv" style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 24px">
       <div style="display: flex; flex-direction: column; gap: 16px; max-width: 880px">
         <p style="margin: 0; font-size: 14px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #7A5C3E">04 — Qué hacemos</p>
-        <h2 style="margin: 0; font-size: clamp(44px, 6vw, 92px); line-height: 0.94; font-weight: 700; letter-spacing: -0.035em">Todo lo que tus redes necesitan.</h2>
+        <h2 style="margin: 0; font-size: clamp(44px, 6vw, 92px); line-height: 0.94; font-weight: 700; letter-spacing: -0.035em">Todo lo que tu marca necesita.</h2>
       </div>
-      <p style="margin: 0; max-width: 380px; font-size: 18px; line-height: 1.45">Podés sumar una parte o dejarnos todo. Bajá y mirá cómo lo hacemos.</p>
+      <p style="margin: 0; max-width: 380px; font-size: 18px; line-height: 1.45">Redes, marca y herramientas digitales. Podés sumar una parte o dejarnos todo.</p>
     </div>
     <div class="svc-scroll" id="svc-scroll">
       <div class="svc-sticky" id="svc-sticky">
+        <span class="svc-chap">A · Redes sociales</span>
         <button class="svc-skip" id="svc-skip" type="button">Saltear <span aria-hidden="true">↓</span></button>
         <ol class="svc-names" aria-label="Servicios"><li><button class="svc-name" type="button" data-go="0" aria-current="true"><svg viewBox="0 0 133.4 136.7" aria-hidden="true"><use href="#ast"></use></svg><span>Estrategia</span></button></li><li><button class="svc-name" type="button" data-go="1" aria-current="false"><svg viewBox="0 0 115 117.4" aria-hidden="true"><use href="#flor"></use></svg><span>Contenido</span></button></li><li><button class="svc-name" type="button" data-go="2" aria-current="false"><svg viewBox="0 0 127.5 118.9" aria-hidden="true"><use href="#estrella"></use></svg><span>Gestión de redes</span></button></li><li><button class="svc-name" type="button" data-go="3" aria-current="false"><svg viewBox="0 0 115 117.4" aria-hidden="true"><use href="#flor"></use></svg><span>Pauta en Meta</span></button></li><li><button class="svc-name" type="button" data-go="4" aria-current="false"><svg viewBox="0 0 133.4 136.7" aria-hidden="true"><use href="#ast"></use></svg><span>Resultados</span></button></li></ol>
         <div class="ph-wrap" id="ph-wrap" aria-hidden="true"><div class="ph" id="ph"><div class="ph-in">
@@ -710,6 +832,107 @@ a{color:#4B2B08}a:hover{color:#BC2313}
         </div>
       </div>
     </div>
+    <div class="chap" id="svc-marca" style="background: #FAF0DA">
+      <div class="chap-head rv">
+        <div style="display: flex; flex-direction: column; gap: 12px"><span class="chap-tag">B · Marca y creatividad</span><h3>Ideas que se ven<br>y se recuerdan.</h3></div>
+        <p style="margin: 0; max-width: 380px; font-size: 17px; line-height: 1.45; color: #7A5C3E">De la identidad de tu marca a la campaña que hace que hablen de vos.</p>
+      </div>
+      <div class="bento rv">
+        <article class="bt b-brand">
+          <h4>Branding</h4>
+          <p>Creamos o renovamos la identidad de tu marca: logo, colores, tipografías y cómo habla.</p>
+          <div class="bt-vis" aria-hidden="true"><div class="brand-row">
+            <span class="brand-aa">Aa</span>
+            <span class="brand-sw"><i style="--k:0;background:#4B2B08"></i><i style="--k:1;background:#9AC3E8"></i><i style="--k:2;background:#FFF0B5;box-shadow:inset 0 0 0 2px #E9D9B6"></i><i style="--k:3;background:#422F2C"></i></span>
+            <span class="brand-mark"><svg viewBox="0 0 133.4 136.7" aria-hidden="true"><use href="#ast"></use></svg></span>
+          </div></div>
+        </article>
+        <article class="bt b-cart">
+          <h4>Cartelería y piezas gráficas</h4>
+          <p>Carteles, vidrieras, flyers, menús, packaging: todo lo que tu marca imprime, con la misma estética.</p>
+          <div class="bt-vis" aria-hidden="true" style="align-items: flex-start; padding-top: 10px">
+            <div class="hang"><span class="hang-str"></span><div class="poster"><span class="pm"><svg viewBox="0 0 127.5 118.9" aria-hidden="true"><use href="#estrella"></use></svg></span><b>GRAN<br>APER-<br>TURA</b><span style="font-size: 12px; font-weight: 600">Sábado · 19 h</span></div></div>
+            <span class="flyer"><svg viewBox="0 0 115 117.4" aria-hidden="true"><use href="#flor"></use></svg></span>
+          </div>
+        </article>
+        <article class="bt b-camp">
+          <h4>Campañas creativas</h4>
+          <p>Una idea fuerte, contada en todos lados.</p>
+          <div class="bt-vis" aria-hidden="true"><div class="cyc">
+            <span style="background: #FFF0B5; color: #4B2B08">Una idea</span>
+            <span style="background: #9AC3E8; color: #4B2B08">Una campaña</span>
+            <span style="background: #FFF0B5; color: #4B2B08">Una marca que se recuerda</span>
+          </div></div>
+        </article>
+        <article class="bt b-acc">
+          <h4>Acciones de marketing</h4>
+          <p>Sorteos, eventos, lanzamientos y colaboraciones que mueven a tu público.</p>
+          <div class="bt-vis" aria-hidden="true"><div class="deck">
+            <span style="--k:0;background:#4B2B08;color:#FFF0B5"><small>Acción</small>Sorteo</span>
+            <span style="--k:1;background:#9AC3E8;color:#4B2B08"><small>Acción</small>Evento</span>
+            <span style="--k:2;background:#FFFFFF;color:#4B2B08"><small>Acción</small>Lanzamiento</span>
+            <span style="--k:3;background:#422F2C;color:#FFF0B5"><small>Acción</small>Colaboración</span>
+          </div></div>
+        </article>
+      </div>
+    </div>
+
+    <div class="chap" id="svc-digital" style="background: #FFF0B5">
+      <div class="chap-head rv">
+        <div style="display: flex; flex-direction: column; gap: 12px"><span class="chap-tag">C · Digital</span><h3>Páginas web y<br>herramientas a medida.</h3></div>
+        <p style="margin: 0; max-width: 380px; font-size: 17px; line-height: 1.45; color: #7A5C3E">Si tu negocio necesita una herramienta, la creamos. Como esta web.</p>
+      </div>
+      <div class="dig rv" id="dig">
+        <div class="dig-copy">
+          <p style="margin: 0; font-size: clamp(19px, 1.6vw, 22px); line-height: 1.4; font-weight: 500">Webs y herramientas hechas para tu negocio, con tu marca, que se usan fácil desde el celular.</p>
+          <div class="dig-tabs" role="tablist" aria-label="Ejemplos de herramientas">
+            <button class="dig-tab" type="button" role="tab" aria-selected="true">Páginas web<i></i></button>
+            <button class="dig-tab" type="button" role="tab" aria-selected="false" tabindex="-1">Agendas y turnos online<i></i></button>
+            <button class="dig-tab" type="button" role="tab" aria-selected="false" tabindex="-1">Tableros de resultados<i></i></button>
+            <button class="dig-tab" type="button" role="tab" aria-selected="false" tabindex="-1">Organizadores de trabajo<i></i></button>
+          </div>
+          <p style="margin: 0; font-size: 15px; color: #E6D6A8">¿Tenés otra idea? Contanos y la hacemos.</p>
+        </div>
+        <div class="dig-stage" aria-hidden="true">
+          <div class="bw">
+            <div class="bw-top"><i></i><i></i><i></i><span class="bw-url" id="bw-url">tumarca.com</span></div>
+            <div class="bw-body">
+              <div class="ds on" data-ds="0">
+                <div class="w-nav" data-a style="--d:0ms"><b>tumarca</b><span><i></i><i></i><i></i></span></div>
+                <div class="w-hero" data-a style="--d:120ms"><div><h5>Lo que hacés, contado lindo.</h5><span class="w-btn">Escribinos →</span></div><div class="w-img"><svg viewBox="0 0 127.5 118.9" aria-hidden="true"><use href="#estrella"></use></svg></div></div>
+                <div class="w-cards"><i data-a style="--d:300ms"></i><i data-a style="--d:380ms"></i><i data-a style="--d:460ms"></i></div>
+              </div>
+              <div class="ds" data-ds="1">
+                <div class="ag-h" data-a style="--d:0ms"><span>Reservá tu turno</span><span style="font-size:12px;opacity:.6">Semana del [día]</span></div>
+                <div class="ag">
+                  <span style="background:none;min-height:0"></span><b>Lun</b><b>Mar</b><b>Mié</b><b>Jue</b><b>Vie</b>
+                  <em>10 h</em><span class="busy"></span><span></span><span class="busy"></span><span></span><span></span>
+                  <em>12 h</em><span></span><span class="busy"></span><span></span><span class="pick"></span><span class="busy"></span>
+                  <em>15 h</em><span class="busy"></span><span></span><span></span><span class="busy"></span><span></span>
+                  <em>17 h</em><span></span><span class="busy"></span><span class="busy"></span><span></span><span></span>
+                </div>
+                <div class="ag-toast"><b>✓</b>Turno confirmado · Jueves 12 h</div>
+              </div>
+              <div class="ds" data-ds="2">
+                <div class="ag-h" data-a style="--d:0ms"><span>Resultados de [mes]</span><span style="font-size:12px;opacity:.6">[cliente]</span></div>
+                <div class="tb-k"><div data-a style="--d:100ms">Seguidores<i style="--w:70%"></i></div><div data-a style="--d:180ms">Alcance<i style="--w:85%"></i></div><div data-a style="--d:260ms">Interacciones<i style="--w:55%"></i></div></div>
+                <div class="tb-c"><i style="--h:35%;--d:300ms"></i><i style="--h:50%;--d:380ms"></i><i style="--h:44%;--d:460ms"></i><i style="--h:66%;--d:540ms"></i><i style="--h:78%;--d:620ms"></i><i style="--h:96%;--d:700ms"></i></div>
+              </div>
+              <div class="ds" data-ds="3">
+                <div class="ag-h" data-a style="--d:0ms"><span>Pendientes del equipo</span><span style="font-size:12px;opacity:.6">Esta semana</span></div>
+                <div class="kb">
+                  <div class="kb-col"><b>Por hacer</b><span style="height:34px;flex:none"></span><span class="kb-card">Pedir fotos</span><span class="kb-card">Armar menú</span></div>
+                  <div class="kb-col"><b>En curso</b><span class="kb-card">Diseño cartel</span></div>
+                  <div class="kb-col"><b>Listo</b><span style="height:34px;flex:none"></span><span class="kb-card">Turnos web</span><span class="kb-card">Reel lanzamiento</span></div>
+                  <span class="kb-move">Publicar promo</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="svc-end rv" id="svc-end">
       <p style="margin: 0; font-size: clamp(22px, 2.4vw, 32px); font-weight: 700; letter-spacing: -0.01em; max-width: 720px">Sin paquetes cerrados. Cada marca es distinta, así que armamos la propuesta a tu medida.</p>
       <a class="btn btn-dark" href="#contacto" style="display: inline-flex; align-items: center; gap: 10px; min-height: 56px; padding: 0 28px; border-radius: 999px; background: #4B2B08; color: #FFF0B5; text-decoration: none; font-weight: 600; font-size: 17px">Pedí tu propuesta <span class="arr" aria-hidden="true">→</span></a>
@@ -828,9 +1051,16 @@ a{color:#4B2B08}a:hover{color:#BC2313}
             <span>¿Qué redes manejan?</span>
             <span class="faq-sign" aria-hidden="true" style="flex: none; width: 42px; height: 42px; border-radius: 999px; display: flex; align-items: center; justify-content: center; font-size: 26px; font-weight: 400; line-height: 1">+</span>
           </button>
-          <div class="faq-a"><div><p style="margin: 0; padding: 0 64px 26px 0; font-size: 17px; line-height: 1.5; color: #7A5C3E">Instagram y TikTok, y campañas pagas en Meta Ads. Si tu marca está en otra red, contanos y lo vemos.</p></div></div>
+          <div class="faq-a"><div><p style="margin: 0; padding: 0 64px 26px 0; font-size: 17px; line-height: 1.5; color: #7A5C3E">Instagram y TikTok, y campañas pagas en Meta Ads. Si tu marca está en otra red, contanos y lo vemos. Además de redes, hacemos branding, campañas, piezas gráficas y webs.</p></div></div>
         </div>
       
+        <div data-open="false" style="border-bottom: 2px solid #4B2B08">
+          <button class="faq-q" type="button" aria-expanded="false" style="width: 100%; min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 20px 0; background: none; border: 0; cursor: pointer; text-align: left; font-family: 'Outfit', system-ui, sans-serif; font-size: 22px; font-weight: 600; color: #4B2B08">
+            <span>¿También hacen páginas web y herramientas?</span>
+            <span class="faq-sign" aria-hidden="true" style="flex: none; width: 42px; height: 42px; border-radius: 999px; display: flex; align-items: center; justify-content: center; font-size: 26px; font-weight: 400; line-height: 1">+</span>
+          </button>
+          <div class="faq-a"><div><p style="margin: 0; padding: 0 64px 26px 0; font-size: 17px; line-height: 1.5; color: #7A5C3E">Sí. Hacemos páginas web y herramientas a medida para tu negocio: agendas de turnos online, tableros de resultados, organizadores y lo que se te ocurra. Contanos qué necesitás.</p></div></div>
+        </div>
         <div data-open="false" style="border-bottom: 2px solid #4B2B08">
           <button class="faq-q" type="button" aria-expanded="false" style="width: 100%; min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 20px 0; background: none; border: 0; cursor: pointer; text-align: left; font-family: 'Outfit', system-ui, sans-serif; font-size: 22px; font-weight: 600; color: #4B2B08">
             <span>¿Cuánto cuesta?</span>
@@ -891,6 +1121,10 @@ a{color:#4B2B08}a:hover{color:#BC2313}
               <button class="chip" type="button" aria-pressed="false" style="min-height: 46px; padding: 0 18px; border-radius: 999px; font-family: 'Outfit', system-ui, sans-serif; font-size: 16px; font-weight: 500; cursor: pointer">Gestión de redes</button>
             
               <button class="chip" type="button" aria-pressed="false" style="min-height: 46px; padding: 0 18px; border-radius: 999px; font-family: 'Outfit', system-ui, sans-serif; font-size: 16px; font-weight: 500; cursor: pointer">Pauta en Meta</button>
+            
+              <button class="chip" type="button" aria-pressed="false" style="min-height: 46px; padding: 0 18px; border-radius: 999px; font-family: 'Outfit', system-ui, sans-serif; font-size: 16px; font-weight: 500; cursor: pointer">Branding o diseño</button>
+            
+              <button class="chip" type="button" aria-pressed="false" style="min-height: 46px; padding: 0 18px; border-radius: 999px; font-family: 'Outfit', system-ui, sans-serif; font-size: 16px; font-weight: 500; cursor: pointer">Web o herramienta</button>
             
               <button class="chip" type="button" aria-pressed="false" style="min-height: 46px; padding: 0 18px; border-radius: 999px; font-family: 'Outfit', system-ui, sans-serif; font-size: 16px; font-weight: 500; cursor: pointer">No sé, asesorame</button>
             
@@ -1416,7 +1650,7 @@ function syncDock() { dock.dataset.hidden = (dock.dataset.inContact === 'true' |
 
 /* ===== Saltear el recorrido de servicios ===== */
 document.getElementById('svc-skip').addEventListener('click', () => {
-  const end = document.getElementById('svc-end');
+  const end = document.getElementById('svc-marca');
   scrollTo({ top: end.getBoundingClientRect().top + scrollY - 120, behavior: reduceMotion ? 'auto' : 'smooth' });
 });
 
@@ -1450,6 +1684,46 @@ document.getElementById('svc-skip').addEventListener('click', () => {
     if (vis && on) { t0 = 0; setTimeout(() => { cancelAnimationFrame(raf); raf = requestAnimationFrame(loop); }, 2200); }
     else cancelAnimationFrame(raf);
   }, { threshold: 0.5 }).observe(cmp);
+})();
+
+/* ===== Digital: pestañas que avanzan solas ===== */
+(() => {
+  const tabs = [...document.querySelectorAll('.dig-tab')], screens = [...document.querySelectorAll('.ds')];
+  const url = document.getElementById('bw-url');
+  const URLS = ['tumarca.com', 'tumarca.com/turnos', 'tablero.tumarca.com', 'tumarca.com/equipo'];
+  const MS = 4800;
+  let cur = 0, auto = !reduceMotion, vis = false, anim = null;
+  function show(i) {
+    cur = i;
+    tabs.forEach((t, k) => { t.setAttribute('aria-selected', k === i ? 'true' : 'false'); t.tabIndex = k === i ? 0 : -1; t.querySelector('i').style.transform = 'scaleX(0)'; });
+    screens.forEach((sc, k) => { sc.classList.toggle('on', k === i); sc.classList.remove('play'); if (k === i) { void sc.offsetWidth; sc.classList.add('play'); } });
+    url.textContent = URLS[i];
+    run();
+  }
+  function run() {
+    if (anim) anim.cancel();
+    if (!auto || !vis) return;
+    const bar = tabs[cur].querySelector('i');
+    anim = bar.animate([{ transform: 'scaleX(0)' }, { transform: 'scaleX(1)' }], { duration: MS, easing: 'linear', fill: 'forwards' });
+    anim.onfinish = () => show((cur + 1) % tabs.length);
+  }
+  tabs.forEach((t, i) => t.addEventListener('click', () => { auto = false; show(i); }));
+  document.querySelector('.dig-tabs').addEventListener('keydown', e => {
+    const k = { ArrowDown: 1, ArrowRight: 1, ArrowUp: -1, ArrowLeft: -1 }[e.key];
+    if (!k) return; e.preventDefault(); auto = false;
+    show((cur + k + tabs.length) % tabs.length); tabs[cur].focus();
+  });
+  new IntersectionObserver(([e]) => {
+    const was = vis; vis = e.isIntersecting;
+    if (vis && !was) show(cur); else if (!vis && anim) anim.pause();
+  }, { threshold: 0.4 }).observe(document.getElementById('dig'));
+})();
+
+/* Pausar animaciones decorativas de Marca fuera de pantalla */
+(() => {
+  const g = document.getElementById('svc-marca');
+  new IntersectionObserver(([e]) => g.querySelectorAll('.brand-aa, .brand-sw i, .brand-mark svg, .hang, .flyer, .cyc span, .deck span')
+    .forEach(el => el.style.animationPlayState = e.isIntersecting ? 'running' : 'paused')).observe(g);
 })();
 </script>
 </body>
