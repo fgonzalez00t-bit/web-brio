@@ -594,9 +594,10 @@ a{color:#4B2B08}a:hover{color:#BC2313}
   /* clientes: dos cintas que pasan solas */
   .clients-grid{display:none!important}
   .clients-mq{display:flex;flex-direction:column;gap:8px;margin:0 -20px;overflow:hidden}
-  .mq-row{display:flex;gap:8px;width:max-content;animation:mq 26s linear infinite}
+  .mq-row{display:flex;gap:8px;width:max-content;animation:mq 22s linear infinite}
   .mq-row.rev{animation-direction:reverse;animation-duration:30s}
-  .mq-row .tile{width:150px;aspect-ratio:3/2!important;font-size:13px!important;flex:none}
+  .mq-row .tile{width:180px;aspect-ratio:3/2!important;flex:none}
+  .mq-row .tile .tile-name{font-size:20px!important}
   /* indicador de sección */
   .secbar{display:flex;position:fixed;top:12px;left:50%;z-index:45;align-items:center;gap:10px;padding:8px 16px 8px 8px;border-radius:999px;background:#4B2B08;color:#FFF0B5;font-size:14px;font-weight:600;box-shadow:0 8px 24px rgba(46,26,5,.25);transform:translate(-50%,-140%);opacity:0;transition:transform 300ms var(--ease-out),opacity 200ms var(--ease-out);overflow:hidden}
   .secbar.show{transform:translate(-50%,0);opacity:1}
@@ -701,7 +702,7 @@ a{color:#4B2B08}a:hover{color:#BC2313}
           <a class="btn btn-dark" href="#contacto" style="display: inline-flex; align-items: center; gap: 10px; min-height: 58px; padding: 0 30px; border-radius: 999px; background: #4B2B08; color: #FFF0B5; text-decoration: none; font-weight: 600; font-size: 17px">Quiero que mi marca brille <span class="arr" aria-hidden="true">→</span></a>
           <a class="btn btn-line" href="#trabajos" style="display: inline-flex; align-items: center; gap: 10px; min-height: 58px; padding: 0 28px; border-radius: 999px; border: 2px solid #4B2B08; color: #4B2B08; text-decoration: none; font-weight: 600; font-size: 17px; box-sizing: border-box">Ver trabajos</a>
         </div>
-        <p class="in d4" style="margin: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px; font-size: 15px; color: #7A5C3E">[N] marcas ya trabajan con nosotras · Respondemos en el día <a href="https://instagram.com/brio.comunicacion" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 6px; min-height: 44px; color: #4B2B08; font-weight: 600"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"></circle></svg>Seguinos en <span class="ig-handle">@brio.comunicacion</span></a></p>
+        <p class="in d4" style="margin: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px; font-size: 15px; color: #7A5C3E">Punto Criollo, Juapaka, Curly y Dra. Pamela Bertiz ya trabajan con nosotras <a href="https://instagram.com/brio.comunicacion" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 6px; min-height: 44px; color: #4B2B08; font-weight: 600"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"></circle></svg>Seguinos en <span class="ig-handle">@brio.comunicacion</span></a></p>
       </div>
       <p class="in d5" style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase">Bajá <span aria-hidden="true">↓</span></p>
     </div>
@@ -764,15 +765,11 @@ a{color:#4B2B08}a:hover{color:#BC2313}
       <p style="margin: 0; max-width: 340px; font-size: 17px; line-height: 1.45; color: #7A5C3E">Tocá cualquier marca para ver su perfil y lo que estamos haciendo juntas.</p>
     </div>
     <div class="clients-mq" id="clients-mq" aria-hidden="true"></div>
-    <div class="rv clients-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 220px), 1fr)); gap: 8px">
-      <a class="tile" href="#clientes" style="aspect-ratio: 4 / 3; background: #FFFFFF; border-radius: 24px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; text-decoration: none; font-weight: 600; font-size: 15px; border: 1px solid #E9D9B6">[LOGO CLIENTE 1]<span style="font-weight: 400; font-size: 13px; color: #7A5C3E">@[usuario]</span></a>
-      <a class="tile" href="#clientes" style="aspect-ratio: 4 / 3; background: #FFFFFF; border-radius: 24px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; text-decoration: none; font-weight: 600; font-size: 15px; border: 1px solid #E9D9B6">[LOGO CLIENTE 2]<span style="font-weight: 400; font-size: 13px; color: #7A5C3E">@[usuario]</span></a>
-      <a class="tile" href="#clientes" style="aspect-ratio: 4 / 3; background: #FFFFFF; border-radius: 24px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; text-decoration: none; font-weight: 600; font-size: 15px; border: 1px solid #E9D9B6">[LOGO CLIENTE 3]<span style="font-weight: 400; font-size: 13px; color: #7A5C3E">@[usuario]</span></a>
-      <a class="tile" href="#clientes" style="aspect-ratio: 4 / 3; background: #FFFFFF; border-radius: 24px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; text-decoration: none; font-weight: 600; font-size: 15px; border: 1px solid #E9D9B6">[LOGO CLIENTE 4]<span style="font-weight: 400; font-size: 13px; color: #7A5C3E">@[usuario]</span></a>
-      <a class="tile" href="#clientes" style="aspect-ratio: 4 / 3; background: #FFFFFF; border-radius: 24px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; text-decoration: none; font-weight: 600; font-size: 15px; border: 1px solid #E9D9B6">[LOGO CLIENTE 5]<span style="font-weight: 400; font-size: 13px; color: #7A5C3E">@[usuario]</span></a>
-      <a class="tile" href="#clientes" style="aspect-ratio: 4 / 3; background: #FFFFFF; border-radius: 24px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; text-decoration: none; font-weight: 600; font-size: 15px; border: 1px solid #E9D9B6">[LOGO CLIENTE 6]<span style="font-weight: 400; font-size: 13px; color: #7A5C3E">@[usuario]</span></a>
-      <a class="tile" href="#clientes" style="aspect-ratio: 4 / 3; background: #FFFFFF; border-radius: 24px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; text-decoration: none; font-weight: 600; font-size: 15px; border: 1px solid #E9D9B6">[LOGO CLIENTE 7]<span style="font-weight: 400; font-size: 13px; color: #7A5C3E">@[usuario]</span></a>
-      <a class="tile" href="#clientes" style="aspect-ratio: 4 / 3; background: #FFFFFF; border-radius: 24px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; text-decoration: none; font-weight: 600; font-size: 15px; border: 1px solid #E9D9B6">[LOGO CLIENTE 8]<span style="font-weight: 400; font-size: 13px; color: #7A5C3E">@[usuario]</span></a>
+    <div class="rv clients-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 8px">
+      <a class="tile" href="https://instagram.com/puntocriollouy" target="_blank" rel="noopener" aria-label="Punto Criollo en Instagram" style="aspect-ratio: 4 / 3; background: #4B2B08; color: #FFF0B5; border-radius: 24px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; padding: 16px; box-sizing: border-box; text-align: center; text-decoration: none; "><span class="tile-name" style="font-size: clamp(22px, 2.2vw, 30px); font-weight: 700; letter-spacing: -0.02em; line-height: 1.05">Punto Criollo</span><span style="font-weight: 500; font-size: 14px; color: #9AC3E8">@puntocriollouy</span></a>
+      <a class="tile" href="https://instagram.com/juapaka.mvd" target="_blank" rel="noopener" aria-label="Juapaka en Instagram" style="aspect-ratio: 4 / 3; background: #9AC3E8; color: #4B2B08; border-radius: 24px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; padding: 16px; box-sizing: border-box; text-align: center; text-decoration: none; "><span class="tile-name" style="font-size: clamp(22px, 2.2vw, 30px); font-weight: 700; letter-spacing: -0.02em; line-height: 1.05">Juapaka</span><span style="font-weight: 500; font-size: 14px; color: #4B2B08">@juapaka.mvd</span></a>
+      <a class="tile" href="https://instagram.com/curlylp" target="_blank" rel="noopener" aria-label="Curly en Instagram" style="aspect-ratio: 4 / 3; background: #FFF0B5; color: #4B2B08; border-radius: 24px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; padding: 16px; box-sizing: border-box; text-align: center; text-decoration: none; border: 1px solid #E9D9B6;"><span class="tile-name" style="font-size: clamp(22px, 2.2vw, 30px); font-weight: 700; letter-spacing: -0.02em; line-height: 1.05">Curly</span><span style="font-weight: 500; font-size: 14px; color: #7A5C3E">@curlylp</span></a>
+      <a class="tile" href="https://instagram.com/drapamelabertiz" target="_blank" rel="noopener" aria-label="Dra. Pamela Bertiz en Instagram" style="aspect-ratio: 4 / 3; background: #FFFFFF; color: #4B2B08; border-radius: 24px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; padding: 16px; box-sizing: border-box; text-align: center; text-decoration: none; border: 1px solid #E9D9B6;"><span class="tile-name" style="font-size: clamp(22px, 2.2vw, 30px); font-weight: 700; letter-spacing: -0.02em; line-height: 1.05">Dra. Pamela Bertiz</span><span style="font-weight: 500; font-size: 14px; color: #7A5C3E">@drapamelabertiz</span></a>
     </div>
     <figure class="rv" style="margin: 0; background: #9AC3E8; border-radius: 24px; padding: clamp(28px, 4vw, 56px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 24px 48px; align-items: end">
       <blockquote style="margin: 0; font-size: clamp(26px, 2.8vw, 40px); line-height: 1.15; font-weight: 500; letter-spacing: -0.01em">“[TESTIMONIO DE UN CLIENTE, EN SUS PALABRAS. UNA O DOS FRASES.]”</blockquote>
@@ -1764,12 +1761,12 @@ document.getElementById('svc-skip').addEventListener('click', () => {
   // Clientes: dos filas que pasan solas (clonadas de la grilla)
   const mq = document.getElementById('clients-mq');
   const tiles = [...document.querySelectorAll('.clients-grid .tile')];
-  [tiles.slice(0, Math.ceil(tiles.length / 2)), tiles.slice(Math.ceil(tiles.length / 2))].forEach((set, r) => {
+  {
     const row = document.createElement('div');
-    row.className = 'mq-row' + (r ? ' rev' : '');
-    for (let k = 0; k < 2; k++) set.concat(set).forEach(t => { const c = t.cloneNode(true); c.tabIndex = -1; row.appendChild(c); });
+    row.className = 'mq-row';
+    for (let k = 0; k < 4; k++) tiles.forEach(t => { const c = t.cloneNode(true); c.tabIndex = -1; row.appendChild(c); });
     mq.appendChild(row);
-  });
+  }
   new IntersectionObserver(([e]) => mq.querySelectorAll('.mq-row').forEach(r => r.style.animationPlayState = e.isIntersecting ? 'running' : 'paused')).observe(mq);
 
   // Carruseles: puntitos que siguen a la tarjeta visible
