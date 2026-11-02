@@ -571,9 +571,17 @@ a{color:#4B2B08}a:hover{color:#BC2313}
 }
 
 @media (max-width:1000px) and (min-width:701px){.reels-car{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
-@media (max-width:1000px) and (min-width:701px){.clients-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
 /* ===== Celular ===== */
-.secbar,.clients-mq,.swipe-hint{display:none}
+.secbar,.swipe-hint{display:none}
+/* Clientes: cintas en movimiento en todas las pantallas */
+.clients-grid{display:none!important}
+.clients-mq{display:flex;flex-direction:column;gap:10px;margin:0 calc(-1 * clamp(20px, 5vw, 72px));overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.mq-row{display:flex;gap:10px;width:max-content;animation:mq 46s linear infinite}
+.mq-row.rev{animation-direction:reverse;animation-duration:54s}
+.mq-row .tile{width:330px;aspect-ratio:2.2/1!important;flex:none;transition:transform 200ms var(--ease-out)}
+@media (hover:hover) and (pointer:fine){.clients-mq:hover .mq-row{animation-play-state:paused!important}.mq-row .tile:hover{transform:translateY(-4px)}}
+.clients-mq:focus-within .mq-row{animation-play-state:paused!important}
+@media (prefers-reduced-motion:reduce){.clients-grid{display:grid!important}.clients-mq{display:none!important}}
 @media (max-width:700px){
   /* bloques más claros */
   #inicio{border-width:8px!important}
@@ -595,11 +603,10 @@ a{color:#4B2B08}a:hover{color:#BC2313}
   .swipe-hint span.on{opacity:1;transform:scale(1.3)}
   .swipe-hint span:last-of-type{margin-right:8px}
   /* clientes: dos cintas que pasan solas */
-  .clients-grid{display:none!important}
-  .clients-mq{display:flex;flex-direction:column;gap:8px;margin:0 -20px;overflow:hidden}
-  .mq-row{display:flex;gap:8px;width:max-content;animation:mq 22s linear infinite}
-  .mq-row.rev{animation-direction:reverse;animation-duration:30s}
-  .mq-row .tile{width:190px;aspect-ratio:3/2!important;flex:none}
+  .clients-mq{gap:8px}
+  .mq-row{gap:8px;animation-duration:24s}
+  .mq-row.rev{animation-duration:30s}
+  .mq-row .tile{width:190px;aspect-ratio:3/2!important}
   .mq-row .tile span:last-child{font-size:12px!important}
   .mq-row .tile .tile-name{font-size:20px!important}
   /* indicador de sección */
@@ -615,8 +622,6 @@ a{color:#4B2B08}a:hover{color:#BC2313}
   .svc-skip{min-height:38px;padding:0 14px}
 }
 @media (max-width:700px) and (prefers-reduced-motion:reduce){
-  .mq-row{animation:none}
-  .clients-mq{overflow-x:auto}
   .secbar,.secbar span{transition:opacity 200ms ease}
   .secbar{transform:translate(-50%,0)}
 }
@@ -1045,7 +1050,7 @@ a{color:#4B2B08}a:hover{color:#BC2313}
       </div>
       <p style="margin: 0; max-width: 340px; font-size: 17px; line-height: 1.45; color: #7A5C3E">Tocá cualquier marca para ver su perfil y lo que estamos haciendo juntas.</p>
     </div>
-    <div class="clients-mq" id="clients-mq" aria-hidden="true"></div>
+    <div class="clients-mq" id="clients-mq" role="list" aria-label="Clientes de Brio"></div>
     <div class="rv clients-grid" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px">
       <a class="tile" href="https://instagram.com/puntocriollouy" target="_blank" rel="noopener" aria-label="Punto Criollo en Instagram" style="aspect-ratio: 2.2 / 1; background: #4B2B08; color: #FFF0B5; border-radius: 24px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; padding: 16px; box-sizing: border-box; text-align: center; text-decoration: none; overflow-wrap: anywhere; "><span class="tile-name" style="font-size: clamp(22px, 2.2vw, 30px); font-weight: 700; letter-spacing: -0.02em; line-height: 1.05">Punto Criollo</span><span style="font-weight: 500; font-size: 14px; color: #9AC3E8">@puntocriollouy</span></a>
       <a class="tile" href="https://instagram.com/juapaka.mvd" target="_blank" rel="noopener" aria-label="Juapaka en Instagram" style="aspect-ratio: 2.2 / 1; background: #9AC3E8; color: #4B2B08; border-radius: 24px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; padding: 16px; box-sizing: border-box; text-align: center; text-decoration: none; overflow-wrap: anywhere; "><span class="tile-name" style="font-size: clamp(22px, 2.2vw, 30px); font-weight: 700; letter-spacing: -0.02em; line-height: 1.05">Juapaka</span><span style="font-weight: 500; font-size: 14px; color: #4B2B08">@juapaka.mvd</span></a>
@@ -1798,7 +1803,11 @@ document.getElementById('svc-skip').addEventListener('click', () => {
   [tiles.slice(0, half), tiles.slice(half)].forEach((set, r) => {
     const row = document.createElement('div');
     row.className = 'mq-row' + (r ? ' rev' : '');
-    for (let k = 0; k < 4; k++) set.forEach(t => { const c = t.cloneNode(true); c.tabIndex = -1; row.appendChild(c); });
+    for (let k = 0; k < 4; k++) set.forEach(t => {
+      const c = t.cloneNode(true);
+      if (k > 0) { c.tabIndex = -1; c.setAttribute('aria-hidden', 'true'); } else c.setAttribute('role', 'listitem');
+      row.appendChild(c);
+    });
     mq.appendChild(row);
   });
   new IntersectionObserver(([e]) => mq.querySelectorAll('.mq-row').forEach(r => r.style.animationPlayState = e.isIntersecting ? 'running' : 'paused')).observe(mq);
